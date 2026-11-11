@@ -1,0 +1,62 @@
+page,form,field,expected_value
+1,SSA-1099,box2 SSN,900-22-6491
+1,SSA-1099,box3,"28,644.00"
+1,SSA-1099,box4,0.00
+1,SSA-1099,box5,"28,644.00"
+1,SSA-1099,box6,"2,864.40"
+2,1099-R,payer/filer name,ARIZONA STATE RETIREMENT SYSTEM
+2,1099-R,payer TIN,86-6004791
+2,1099-R,recipient TIN,***-**-6491
+2,1099-R,box1,"36,480.00"
+2,1099-R,box2a,"34,912.56"
+2,1099-R,box2b not determined,not checked
+2,1099-R,box4,"3,600.00"
+2,1099-R,box5,"1,567.44"
+2,1099-R,box7,7
+2,1099-R,box7 IRA/SEP/SIMPLE,not checked
+2,1099-R,box14,"1,094.40"
+3,1099-R,payer/filer name,VANGUARD FIDUCIARY TRUST CO
+3,1099-R,payer TIN,23-2186884
+3,1099-R,recipient TIN,***-**-6491
+3,1099-R,box1,"14,250.00"
+3,1099-R,box2a,"14,250.00"
+3,1099-R,box2b not determined,checked
+3,1099-R,box4,"1,425.00"
+3,1099-R,box7,7
+3,1099-R,box7 IRA/SEP/SIMPLE,checked
+4,1099-INT,payer/filer name,TREASURYDIRECT / BUREAU OF THE FISCAL SERVICE
+4,1099-INT,payer TIN,52-0806185
+4,1099-INT,recipient TIN,***-**-6491
+4,1099-INT,box3,"2,318.06"
+4,1099-INT,box12,41.12
+5,1099-DIV,payer/filer name,VANGUARD MARKETING CORP
+5,1099-DIV,payer TIN,23-1945930
+5,1099-DIV,recipient TIN,***-**-6491
+5,1099-DIV,box1a,"6,812.33"
+5,1099-DIV,box1b,"5,940.10"
+5,1099-DIV,box2a,"1,205.88"
+5,1099-DIV,box2b,44.10
+5,1099-DIV,box3,120.00
+5,1099-DIV,box5,212.47
+5,1099-DIV,box7,98.64
+5,1099-DIV,box12,615.00
+6,1099-INT,payer/filer name,DESERT FINANCIAL CREDIT UNION
+6,1099-INT,payer TIN,86-0187702
+6,1099-INT,recipient TIN,***-**-6491
+6,1099-INT,box1,"1,046.19"
+6,1099-INT,box2,62.50
+7,W-2G,payer/filer name,CASINO DEL SOL RESORT
+7,W-2G,payer TIN,86-0712843
+7,W-2G,recipient TIN,***-**-6491
+7,W-2G,box1,"4,200.00"
+7,W-2G,box2,08/23/2025
+7,W-2G,box3,SLOT
+8,5498,payer/filer name,VANGUARD FIDUCIARY TRUST CO
+8,5498,payer TIN,23-2186884
+8,5498,recipient TIN,***-**-6491
+8,5498,box5,"301,744.82"
+8,5498,box12b,"13,880.42"
+9,1099-OID,payer/filer name,VANGUARD MARKETING CORP
+9,1099-OID,payer TIN,23-1945930
+9,1099-OID,recipient TIN,***-**-6491
+9,1099-OID,all boxes,0.00 (zero-value form)

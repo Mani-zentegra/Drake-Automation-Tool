@@ -1,0 +1,20 @@
+# Web app
+Flask>=2.3
+python-dotenv>=1.0
+requests>=2.31
+
+# PDF / Excel extraction
+pypdf>=4.0
+pdfplumber>=0.10
+pytesseract>=0.3
+Pillow>=10.0
+openpyxl==3.1.5
+pandas>=2.0
+reportlab>=4.0
+
+# Drake Tax automation (Windows only)
+pywinauto==0.6.9
+PyAutoGUI==0.9.54
+pywin32==311
+comtypes==1.4.16
+psutil>=5.9

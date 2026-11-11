@@ -1,0 +1,6 @@
+# Zoho widget dev server (zet run): installed packages, local HTTPS certificate and its PRIVATE KEY
+FBAR/node_modules/
+FBAR/*.pem
+# zet pack output and debug logs
+FBAR/dist/
+*.log

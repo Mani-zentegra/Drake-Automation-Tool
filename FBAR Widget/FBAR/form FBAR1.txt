@@ -1,0 +1,817 @@
+form FBAR1
+{
+	displayname = "FBAR"
+	success message = "Data Added Successfully!"
+	Section
+	(
+		type = section
+	 	row = 1
+	 	column = 0   
+		width = medium
+	)
+	Tax_Payer_Full_name
+	(
+		type = picklist	
+		displayname = "Tax Payer Full name"
+		values  = Personal_Info.ID
+    	displayformat = [Taxpayer_Full_Name]
+		sortorder = ascending
+	 	row = 1
+	 	column = 1   
+		width = medium
+	)
+	Tax_Year
+	(
+    	type = text
+		displayname = "Tax Year"
+	 	row = 1
+	 	column = 1   
+		width = medium
+	)
+	Spouse_Full_name
+	(
+		type = picklist	
+		displayname = "Spouse Full name"
+		values  = Personal_Info.ID
+    	displayformat = [Spouse_Full_Name]
+		sortorder = ascending
+	 	row = 1
+	 	column = 2   
+		width = medium
+	)
+	Taxpayer_Separately
+	(
+		type = grid
+		displayname = "Taxpayer Separately"
+		Maximum_value_of_the_account_in_Rupees
+		(
+			displayname = "Maximum value of the account in Rupees₹"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Maximum_value_of_the_account_in_US
+		(
+			displayname = "Maximum value of the account in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Type_of_Account
+		(
+			type = picklist
+			displayname = "Type of Account"
+			maxchar = 100
+			values = {"Bank","Securities"}
+			others option = true
+			width = medium
+		)
+		Account_Opened_During_Tax_Year
+		(
+			type = picklist
+			displayname = "Account Opened During Tax Year"
+			maxchar = 100
+			values = {"Yes","No"}
+			width = medium
+		)
+		Account_Closed_During_Tax_Year
+		(
+			type = picklist
+			displayname = "Account Closed During Tax Year"
+			maxchar = 100
+			values = {"Yes","No"}
+			width = medium
+		)
+		Name_of_the_Financial_Institution
+		(
+    		type = text
+			displayname = "Name of the Financial Institution"
+			width = medium
+		)
+		Account_Number
+		(
+    		type = text
+			displayname = "Account Number"
+			width = medium
+		)
+		Address
+		(
+    		type = address
+     		capture_coordinates = true
+     		adjust_using_map = false
+     		address_line_1
+     		(
+	     		  type = address_line_1
+	     		  displayname = "Address Line 1"
+     		) 
+     		address_line_2
+     		(
+	     		  type = address_line_2
+	     		  displayname = "Address Line 2"
+     		) 
+     		district_city
+     		(
+	     		  type = district_city
+	     		  displayname = "Address Line 3"
+     		) 
+     		state_province
+     		(
+	     		  type = state_province
+	     		  displayname = "State / Province"
+	     		 visibility = false
+     		) 
+     		postal_Code
+     		(
+	     		  type = postal_Code
+	     		  displayname = "Postal Code"
+	     		 visibility = false
+     		) 
+     		country
+     		(
+	     		  type = country
+	     		  displayname = "Country"
+	     		 visibility = false
+     		) 
+     		latitude
+     		(
+	     		  type = latitude
+	     		  displayname = "latitude"
+	     		 visibility = false
+     		) 
+     		longitude
+     		(
+	     		  type = longitude
+	     		  displayname = "longitude"
+	     		 visibility = false
+     		) 
+			width = medium
+			personal data = true
+		)
+		Interest_Received_Accrued_in_Rupees
+		(
+			displayname = "Interest Received/Accrued in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Interest_Received_Accrued_in_US
+		(
+			displayname = "Interest Received/Accrued in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Dividend_Distributed_in_Rupees
+		(
+			displayname = "Dividend Distributed in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Dividend_Distributed_in_US
+		(
+			displayname = "Dividend Distributed in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Tax_Paid_Outside_US_in_Rupees
+		(
+			displayname = "Tax Paid Outside US in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Tax_Paid_Outside_US_in_US
+		(
+			displayname = "Tax Paid Outside US in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Foreign_Currency_Account_Maintained
+		(
+			type = picklist
+			displayname = "Foreign Currency Account Maintained"
+			maxchar = 100
+			values = {"Choice 1","Choice 2","Choice 3"}
+			width = medium
+		)
+		Exchange_Rate_Used_Rupees_US
+		(
+			type = decimal
+			displayname = "Exchange Rate Used (Rupees/US$)"
+			maxchar = 16
+			decimalplace = 10
+			width = medium
+		)
+	 	row = 2
+	 	column = 1   
+		width = medium
+	)
+	Taxpayer_Jointly
+	(
+		type = grid
+		displayname = "Taxpayer Jointly"
+		Maximum_value_of_the_account_in_Rupees
+		(
+			displayname = "Maximum value of the account in Rupees₹"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Maximum_value_of_the_account_in_US
+		(
+			displayname = "Maximum value of the account in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Type_of_Account
+		(
+			type = picklist
+			displayname = "Type of Account"
+			maxchar = 100
+			values = {"Bank","Securities"}
+			others option = true
+			width = medium
+		)
+		Account_Opened_During_Tax_Year
+		(
+			type = picklist
+			displayname = "Account Opened During Tax Year"
+			maxchar = 100
+			values = {"Yes","No"}
+			width = medium
+		)
+		Account_Closed_During_Tax_Year
+		(
+			type = picklist
+			displayname = "Account Closed During Tax Year"
+			maxchar = 100
+			values = {"Yes","No"}
+			width = medium
+		)
+		Name_of_the_Financial_Institution
+		(
+    		type = text
+			displayname = "Name of the Financial Institution"
+			width = medium
+		)
+		Account_Number
+		(
+    		type = text
+			displayname = "Account Number"
+			width = medium
+		)
+		Address
+		(
+    		type = address
+     		capture_coordinates = true
+     		adjust_using_map = false
+     		address_line_1
+     		(
+	     		  type = address_line_1
+	     		  displayname = "Address Line 1"
+     		) 
+     		address_line_2
+     		(
+	     		  type = address_line_2
+	     		  displayname = "Address Line 2"
+     		) 
+     		district_city
+     		(
+	     		  type = district_city
+	     		  displayname = "Address Line 3"
+     		) 
+     		state_province
+     		(
+	     		  type = state_province
+	     		  displayname = "State / Province"
+	     		 visibility = false
+     		) 
+     		postal_Code
+     		(
+	     		  type = postal_Code
+	     		  displayname = "Postal Code"
+	     		 visibility = false
+     		) 
+     		country
+     		(
+	     		  type = country
+	     		  displayname = "Country"
+	     		 visibility = false
+     		) 
+     		latitude
+     		(
+	     		  type = latitude
+	     		  displayname = "latitude"
+	     		 visibility = false
+     		) 
+     		longitude
+     		(
+	     		  type = longitude
+	     		  displayname = "longitude"
+	     		 visibility = false
+     		) 
+			width = medium
+			personal data = true
+		)
+		Interest_Received_Accrued_in_Rupees
+		(
+			displayname = "Interest Received/Accrued in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Interest_Received_Accrued_in_US
+		(
+			displayname = "Interest Received/Accrued in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Dividend_Distributed_in_Rupees
+		(
+			displayname = "Dividend Distributed in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Dividend_Distributed_in_US
+		(
+			displayname = "Dividend Distributed in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Tax_Paid_Outside_US_in_Rupees
+		(
+			displayname = "Tax Paid Outside US in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Tax_Paid_Outside_US_in_US
+		(
+			displayname = "Tax Paid Outside US in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Foreign_Currency_Account_Maintained
+		(
+			type = picklist
+			displayname = "Foreign Currency Account Maintained"
+			maxchar = 100
+			values = {"Choice 1","Choice 2","Choice 3"}
+			width = medium
+		)
+		Exchange_Rate_Used_Rupees_US
+		(
+			type = decimal
+			displayname = "Exchange Rate Used (Rupees/US$)"
+			maxchar = 16
+			decimalplace = 10
+			width = medium
+		)
+		Joint_Owner_Relationship
+		(
+			type = picklist
+			displayname = "Joint Owner Relationship"
+			maxchar = 100
+			values = {"Spouse","Father","Mother","Son","Daughter","Sibling"}
+			others option = true
+			width = medium
+		)
+		Joint_Owner_First_Name
+		(
+    		type = text
+			displayname = "Joint Owner First Name"
+			width = medium
+		)
+		Joint_Owner_Last_Name
+		(
+    		type = text
+			displayname = "Joint Owner Last Name"
+			width = medium
+		)
+		Joint_Owner_SSN_or_TIN
+		(
+    		type = text
+			displayname = "Joint Owner SSN or TIN"
+			width = medium
+		)
+	 	row = 2
+	 	column = 1   
+		width = medium
+	)
+	Spouse_Separately
+	(
+		type = grid
+		displayname = "Spouse Separately"
+		Maximum_value_of_the_account_in_Rupees
+		(
+			displayname = "Maximum value of the account in Rupees₹"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Maximum_value_of_the_account_in_US
+		(
+			displayname = "Maximum value of the account in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Type_of_Account
+		(
+			type = picklist
+			displayname = "Type of Account"
+			maxchar = 100
+			values = {"Bank","Securities"}
+			others option = true
+			width = medium
+		)
+		Account_Opened_During_Tax_Year
+		(
+			type = picklist
+			displayname = "Account Opened During Tax Year"
+			maxchar = 100
+			values = {"Yes","No"}
+			width = medium
+		)
+		Account_Closed_During_Tax_Year
+		(
+			type = picklist
+			displayname = "Account Closed During Tax Year"
+			maxchar = 100
+			values = {"Yes","No"}
+			width = medium
+		)
+		Name_of_the_Financial_Institution
+		(
+    		type = text
+			displayname = "Name of the Financial Institution"
+			width = medium
+		)
+		Account_Number
+		(
+    		type = text
+			displayname = "Account Number"
+			width = medium
+		)
+		Address
+		(
+    		type = address
+     		capture_coordinates = true
+     		adjust_using_map = false
+     		address_line_1
+     		(
+	     		  type = address_line_1
+	     		  displayname = "Address Line 1"
+     		) 
+     		address_line_2
+     		(
+	     		  type = address_line_2
+	     		  displayname = "Address Line 2"
+     		) 
+     		district_city
+     		(
+	     		  type = district_city
+	     		  displayname = "Address Line 3"
+     		) 
+     		state_province
+     		(
+	     		  type = state_province
+	     		  displayname = "State / Province"
+	     		 visibility = false
+     		) 
+     		postal_Code
+     		(
+	     		  type = postal_Code
+	     		  displayname = "Postal Code"
+	     		 visibility = false
+     		) 
+     		country
+     		(
+	     		  type = country
+	     		  displayname = "Country"
+	     		 visibility = false
+     		) 
+     		latitude
+     		(
+	     		  type = latitude
+	     		  displayname = "latitude"
+	     		 visibility = false
+     		) 
+     		longitude
+     		(
+	     		  type = longitude
+	     		  displayname = "longitude"
+	     		 visibility = false
+     		) 
+			width = medium
+			personal data = true
+		)
+		Interest_Received_Accrued_in_Rupees
+		(
+			displayname = "Interest Received/Accrued in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Interest_Received_Accrued_in_US
+		(
+			displayname = "Interest Received/Accrued in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Dividend_Distributed_in_Rupees
+		(
+			displayname = "Dividend Distributed in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Dividend_Distributed_in_US
+		(
+			displayname = "Dividend Distributed in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Tax_Paid_Outside_US_in_Rupees
+		(
+			displayname = "Tax Paid Outside US in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Tax_Paid_Outside_US_in_US
+		(
+			displayname = "Tax Paid Outside US in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Foreign_Currency_Account_Maintained
+		(
+			type = picklist
+			displayname = "Foreign Currency Account Maintained"
+			maxchar = 100
+			values = {"Choice 1","Choice 2","Choice 3"}
+			width = medium
+		)
+		Exchange_Rate_Used_Rupees_US
+		(
+			type = decimal
+			displayname = "Exchange Rate Used (Rupees/US$)"
+			maxchar = 16
+			decimalplace = 10
+			width = medium
+		)
+	 	row = 2
+	 	column = 1   
+		width = medium
+	)
+	Spouse_Jointly
+	(
+		type = grid
+		displayname = "Spouse Jointly"
+		Maximum_value_of_the_account_in_Rupees
+		(
+			displayname = "Maximum value of the account in Rupees₹"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Maximum_value_of_the_account_in_US
+		(
+			displayname = "Maximum value of the account in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Type_of_Account
+		(
+			type = picklist
+			displayname = "Type of Account"
+			maxchar = 100
+			values = {"Bank","Securities"}
+			others option = true
+			width = medium
+		)
+		Account_Opened_During_Tax_Year
+		(
+			type = picklist
+			displayname = "Account Opened During Tax Year"
+			maxchar = 100
+			values = {"Yes","No"}
+			width = medium
+		)
+		Account_Closed_During_Tax_Year
+		(
+			type = picklist
+			displayname = "Account Closed During Tax Year"
+			maxchar = 100
+			values = {"Yes","No"}
+			width = medium
+		)
+		Name_of_the_Financial_Institution
+		(
+    		type = text
+			displayname = "Name of the Financial Institution"
+			width = medium
+		)
+		Account_Number
+		(
+    		type = text
+			displayname = "Account Number"
+			width = medium
+		)
+		Address
+		(
+    		type = address
+     		capture_coordinates = true
+     		adjust_using_map = false
+     		address_line_1
+     		(
+	     		  type = address_line_1
+	     		  displayname = "Address Line 1"
+     		) 
+     		address_line_2
+     		(
+	     		  type = address_line_2
+	     		  displayname = "Address Line 2"
+     		) 
+     		district_city
+     		(
+	     		  type = district_city
+	     		  displayname = "Address Line 3"
+     		) 
+     		state_province
+     		(
+	     		  type = state_province
+	     		  displayname = "State / Province"
+	     		 visibility = false
+     		) 
+     		postal_Code
+     		(
+	     		  type = postal_Code
+	     		  displayname = "Postal Code"
+	     		 visibility = false
+     		) 
+     		country
+     		(
+	     		  type = country
+	     		  displayname = "Country"
+	     		 visibility = false
+     		) 
+     		latitude
+     		(
+	     		  type = latitude
+	     		  displayname = "latitude"
+	     		 visibility = false
+     		) 
+     		longitude
+     		(
+	     		  type = longitude
+	     		  displayname = "longitude"
+	     		 visibility = false
+     		) 
+			width = medium
+			personal data = true
+		)
+		Interest_Received_Accrued_in_Rupees
+		(
+			displayname = "Interest Received/Accrued in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Interest_Received_Accrued_in_US
+		(
+			displayname = "Interest Received/Accrued in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Dividend_Distributed_in_Rupees
+		(
+			displayname = "Dividend Distributed in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Dividend_Distributed_in_US
+		(
+			displayname = "Dividend Distributed in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Tax_Paid_Outside_US_in_Rupees
+		(
+			displayname = "Tax Paid Outside US in Rupees"
+			type = INR
+			format = commadotwestern
+			width = medium
+		)
+		Tax_Paid_Outside_US_in_US
+		(
+			displayname = "Tax Paid Outside US in US$"
+			type = USD
+			format = commadotwestern
+			width = medium
+		)
+		Foreign_Currency_Account_Maintained
+		(
+			type = picklist
+			displayname = "Foreign Currency Account Maintained"
+			maxchar = 100
+			values = {"Choice 1","Choice 2","Choice 3"}
+			width = medium
+		)
+		Exchange_Rate_Used_Rupees_US
+		(
+			type = decimal
+			displayname = "Exchange Rate Used (Rupees/US$)"
+			maxchar = 16
+			decimalplace = 10
+			width = medium
+		)
+		Joint_Owner_Relationship
+		(
+			type = picklist
+			displayname = "Joint Owner Relationship"
+			maxchar = 100
+			values = {"Spouse","Father","Mother","Son","Daughter","Sibling"}
+			others option = true
+			width = medium
+		)
+		Joint_Owner_First_Name
+		(
+    		type = text
+			displayname = "Joint Owner First Name"
+			width = medium
+		)
+		Joint_Owner_Last_Name
+		(
+    		type = text
+			displayname = "Joint Owner Last Name"
+			width = medium
+		)
+		Joint_Owner_SSN_or_TIN
+		(
+    		type = text
+			displayname = "Joint Owner SSN or TIN"
+			width = medium
+		)
+	 	row = 2
+	 	column = 1   
+		width = medium
+	)
+	Notes
+	(
+		type = section
+		visibility = true
+	 	row = 3
+	 	column = 0   
+		width = medium
+	)
+	plain
+	(
+    	type = plaintext
+		value = "<ol style=\"box-sizing: border-box; margin: 8px 0px 0px; padding-left: 20px; color: rgb(50, 57, 67); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-color: initial\" id=\"notesList\"><li style=\"box-sizing: border-box; margin: 3px 0px\"><b>For life insurance, state the cash value in the maximum value of the account.</b><b><br /></b></li><li style=\"box-sizing: border-box; margin: 3px 0px\"><b>If the filer has signature authority on any account and no financial interest in the account, such accounts are to be detailed as well.</b><b><br /></b></li><li style=\"box-sizing: border-box; margin: 3px 0px\"><b>Enter Rupees and it will be converted to US$ with the exchange rate.</b><b><br /></b></li><li style=\"box-sizing: border-box; margin: 3px 0px\"><b>Account opened and closed default to No — change to Yes as necessary.</b><b><br /></b></li></ol><div><span class=\"font\" style=\"font-family: RobotoCondensed, sans-serif\">​</span><br /></div>"
+	 	row = 3
+	 	column = 1   
+		width = medium
+	)
+	
+	actions
+	{
+		on add
+		{
+			submit
+			(
+   				type = submit
+   				displayname = "Submit"
+			)
+		}
+		on edit
+		{
+			update
+			(
+   				type = submit
+   				displayname = "Update"
+			)
+			cancel
+			(
+   				type = cancel
+   				displayname = "Cancel"
+			)
+		}
+	}
+}

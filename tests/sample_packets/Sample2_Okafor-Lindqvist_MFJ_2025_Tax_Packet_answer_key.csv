@@ -1,0 +1,79 @@
+page,form,field,expected_value
+1,(cover page),should be ignored / UNKNOWN,no tax form
+2,W-2,employee SSN,900-61-3307
+2,W-2,employer EIN,84-1022398
+2,W-2,employer name,FRONT RANGE MEDICAL GROUP PC
+2,W-2,box1,"148,320.00"
+2,W-2,box2,"22,104.66"
+2,W-2,box3,"165,400.00"
+2,W-2,box4,"10,254.80"
+2,W-2,box5,"165,400.00"
+2,W-2,box6,"2,398.30"
+2,W-2,box12a,"D 17,080.00"
+2,W-2,box12b,"DD 14,980.20"
+2,W-2,box12c,"W 4,300.00"
+2,W-2,box13 retirement plan,checked
+2,W-2,box15 state,CO
+2,W-2,box16,"148,320.00"
+2,W-2,box17,"6,526.08"
+3,W-2,employee SSN,900-61-8854
+3,W-2,employer EIN,84-6000580
+3,W-2,employer name,POUDRE SCHOOL DISTRICT R-1
+3,W-2,box1,"52,764.12"
+3,W-2,box2,"3,910.00"
+3,W-2,box3,"52,764.12"
+3,W-2,box4,"3,271.38"
+3,W-2,box5,"52,764.12"
+3,W-2,box6,765.08
+3,W-2,box10,"2,500.00"
+3,W-2,box12a,"E 2,400.00"
+3,W-2,box13 retirement plan,checked
+3,W-2,box15 state,CO
+3,W-2,box16,"52,764.12"
+3,W-2,box17,"2,321.62"
+4,1099-NEC,payer/filer name,LARIMER COUNTY HEALTH COOPERATIVE
+4,1099-NEC,payer TIN,84-1789022
+4,1099-NEC,recipient TIN,***-**-3307
+4,1099-NEC,box1,"9,600.00"
+4,1099-NEC,box2,not checked
+5,1099-MISC,payer/filer name,ALPINE PROPERTY MANAGEMENT LLC
+5,1099-MISC,payer TIN,84-3366104
+5,1099-MISC,recipient TIN,***-**-3307
+5,1099-MISC,box1,"21,600.00"
+5,1099-MISC,box3,350.00
+6,1099-K,payer/filer name,ETSY PAYMENTS INC
+6,1099-K,payer TIN,46-3841991
+6,1099-K,recipient TIN,***-**-8854
+6,1099-K,box1a,"7,412.55"
+6,1099-K,box3,214
+7,1099-G,payer/filer name,COLORADO DEPARTMENT OF REVENUE
+7,1099-G,payer TIN,84-0644739
+7,1099-G,recipient TIN,***-**-3307
+7,1099-G,box2,812.00
+7,1099-G,box3,2024
+8,1098,payer/filer name,ELEVATIONS CREDIT UNION
+8,1098,payer TIN,84-0499715
+8,1098,recipient TIN,***-**-3307
+8,1098,box1,"14,206.91"
+8,1098,box2,"398,114.20"
+8,1098,box3,06/14/2021
+8,1098,box10,"3,488.00"
+9,1099-SA,payer/filer name,HEALTHEQUITY INC
+9,1099-SA,payer TIN,52-2383166
+9,1099-SA,recipient TIN,***-**-8854
+9,1099-SA,box1,"2,140.37"
+9,1099-SA,box3,1
+9,1099-SA,box5 HSA,checked
+10,5498-SA,payer/filer name,HEALTHEQUITY INC
+10,5498-SA,payer TIN,52-2383166
+10,5498-SA,recipient TIN,***-**-8854
+10,5498-SA,box2,"4,150.00"
+10,5498-SA,box3,500.00
+10,5498-SA,box5,"11,872.04"
+11,1099-Q,payer/filer name,COLLEGEINVEST
+11,1099-Q,payer TIN,84-1401320
+11,1099-Q,recipient TIN,***-**-3307
+11,1099-Q,box1,"8,000.00"
+11,1099-Q,box2,"1,912.40"
+11,1099-Q,box3,"6,087.60"
+11,1099-Q,box4,not checked

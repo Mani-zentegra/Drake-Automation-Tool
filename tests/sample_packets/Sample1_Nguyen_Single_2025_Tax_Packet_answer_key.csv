@@ -1,0 +1,45 @@
+page,form,field,expected_value
+1,W-2,employee SSN,900-45-1278
+1,W-2,employer EIN,47-3920115
+1,W-2,employer name,NORTHWIND ANALYTICS LLC
+1,W-2,box1,"61,250.00"
+1,W-2,box2,"6,840.12"
+1,W-2,box3,"64,850.00"
+1,W-2,box4,"4,020.70"
+1,W-2,box5,"64,850.00"
+1,W-2,box6,940.33
+1,W-2,box12a,"D 3,600.00"
+1,W-2,box12b,"DD 7,212.48"
+1,W-2,box12c,"W 1,000.00"
+1,W-2,box13 retirement plan,checked
+1,W-2,box15 state,ID
+1,W-2,box16,"61,250.00"
+1,W-2,box17,"2,942.10"
+2,W-2,employee SSN,900-45-1278
+2,W-2,employer EIN,82-1100457
+2,W-2,employer name,SAWTOOTH OUTFITTERS INC
+2,W-2,box1,"4,180.50"
+2,W-2,box2,212.00
+2,W-2,box3,"4,180.50"
+2,W-2,box4,259.19
+2,W-2,box5,"4,180.50"
+2,W-2,box6,60.62
+2,W-2,box13 retirement plan,not checked
+2,W-2,box15 state,ID
+2,W-2,box16,"4,180.50"
+2,W-2,box17,145.00
+3,1099-INT,payer/filer name,IDAHO CENTRAL CREDIT UNION
+3,1099-INT,payer TIN,82-0301547
+3,1099-INT,recipient TIN,***-**-1278
+3,1099-INT,box1,412.87
+4,1098-E,payer/filer name,MOHELA
+4,1098-E,payer TIN,43-1278905
+4,1098-E,recipient TIN,***-**-1278
+4,1098-E,box1,"1,688.34"
+5,1098-T,payer/filer name,BOISE STATE UNIVERSITY
+5,1098-T,payer TIN,82-6000952
+5,1098-T,recipient TIN,***-**-1278
+5,1098-T,box1,"4,890.00"
+5,1098-T,box5,"1,500.00"
+5,1098-T,box8 half-time,not checked
+5,1098-T,box9 graduate,checked

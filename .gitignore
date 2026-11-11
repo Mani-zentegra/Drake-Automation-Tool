@@ -1,0 +1,35 @@
+# ---- Secrets: never commit (use the *.example files in config/) ----
+config/.env
+config/env
+config/zoho_config.json
+.env
+*.env
+*.pem
+
+# ---- Client data (runtime) ----
+uploads/*
+!uploads/.gitkeep
+history/*
+!history/packets/
+history/packets/*
+!history/packets/.gitkeep
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# ---- FBAR widget (Zoho dev server packages, build output) ----
+node_modules/
+dist/
+
+# ---- Old scripts, logs, editor/OS files ----
+_unused_files/
+*.log
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+*.exe
+*.zip
