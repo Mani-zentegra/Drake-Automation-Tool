@@ -1,0 +1,2866 @@
+/*
+ * Author       : zentegraindia
+ * Generated on : 11-Nov-2026 17:21:13
+ * Version      : 1.0
+ */
+ application "Drake Automation "
+ {
+ 	date format = "dd-MMM-yyyy"
+ 	time zone = "America/Chicago"
+ 	time format = "24-hr"
+
+ 	forms
+	{
+		form Additional_Information
+		{
+			displayname = "Additional Information"
+			success message = "Additional Information Added Successfully"
+			Personal_Info
+			(
+				type = section
+				displayname = "Personal Info"
+				visibility = true
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Tax_Payer_Full_name
+			(
+				type = picklist	
+				displayname = "Tax Payer Full name"
+				values  = Personal_Info.ID
+    			displayformat = [Taxpayer_Full_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Section
+			(
+				type = section
+	 			row = 2
+	 			column = 0   
+				width = medium
+			)
+			Do_you_have_a_foreign_bank_account
+			(
+				type = picklist
+				displayname = "Do you have a foreign bank account?"
+				maxchar = 100
+				values = {"Yes","No"}
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Country_of_Foreign_Account
+			(
+    			type = text
+				displayname = "Country of Foreign Account"
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Are_you_required_to_file_for_FBAR
+			(
+				type = picklist
+				displayname = "Are you required to file for FBAR?"
+				maxchar = 100
+				values = {"Yes","No"}
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Would_you_want_us_to_file_for_FBAR
+			(
+				type = picklist
+				displayname = "Would you want us to file for FBAR?"
+				maxchar = 100
+				values = {"Yes","No"}
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			FBAR_for
+			(
+				type = picklist
+				displayname = "FBAR for"
+				maxchar = 100
+				values = {"Taxpayer","Spouse","Both"}
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Do_you_have_self_employment_income
+			(
+				type = picklist
+				displayname = "Do you have self employment income (1099-NEC/1099-K/Cash)?"
+				maxchar = 100
+				values = {"Yes","No"}
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Did_you_receive_sell_exchange_gift_or_acquire_financial_interest_in_Digital_Asset
+			(
+				type = picklist
+				displayname = "Did you receive, sell, exchange, gift or acquire financial interest in Digital Asset?"
+				maxchar = 100
+				values = {"Yes","No"}
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Drop_DownDid_you_and_family_have_health_insurance
+			(
+				type = picklist
+				displayname = "Drop DownDid you and family have health insurance?"
+				maxchar = 100
+				values = {"Yes","No"}
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Upload_1095A_if_Market_Place_coverage
+			(
+    			type = upload file
+				displayname = "Upload 1095A if Market Place coverage"
+				browse = local_drive
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Do_you_own_Foreign_Mutual_Funds
+			(
+				type = picklist
+				displayname = "Do you own Foreign Mutual Funds?"
+				maxchar = 100
+				values = {"Yes","No"}
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Do_you_have_rental_property
+			(
+				type = picklist
+				displayname = "Do you have rental property?"
+				maxchar = 100
+				values = {"Yes","No"}
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "<div> <br /></div>"
+	 			row = 2
+	 			column = 3   
+				width = medium
+			)
+			States_lived_in_during_the_tax_year
+			(
+				type = grid
+				displayname = "States lived in during the tax year	 	 	 "
+				State
+				(
+					type = picklist
+					maxchar = 100
+					values = {"Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"}
+					width = medium
+				)
+				From
+				(
+    				type = date
+					alloweddays = 0,1,2,3,4,5,6
+					width = medium
+				)
+				To
+				(
+    				type = date
+					alloweddays = 0,1,2,3,4,5,6
+					width = medium
+				)
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			States_worked_in_during_the_tax_year
+			(
+				type = grid
+				displayname = "States worked in during the tax year	 	 	 "
+				State
+				(
+					type = picklist
+					maxchar = 100
+					values = {"Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"}
+					width = medium
+				)
+				From
+				(
+    				type = date
+					alloweddays = 0,1,2,3,4,5,6
+					width = medium
+				)
+				To
+				(
+    				type = date
+					alloweddays = 0,1,2,3,4,5,6
+					width = medium
+				)
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Checklist
+		{
+			success message = "Data Added Successfully!"
+			Personal_Info
+			(
+				type = section
+				displayname = "Personal Info"
+				visibility = true
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Tax_Payer_Full_name
+			(
+				type = picklist	
+				displayname = "Tax Payer Full name"
+				values  = Personal_Info.ID
+    			displayformat = [Taxpayer_Full_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			W2
+			(
+				type = grid
+				Type_field
+				(
+					type = picklist
+					maxchar = 100
+					values = {"Taxpayer","Spouse"}
+					width = medium
+				)
+				Taxpayer_Full_Name
+				(
+					type = picklist	
+					displayname = "Taxpayer Full Name"
+					values  = Personal_Info.ID
+    				displayformat = [Taxpayer_Full_Name]
+					sortorder = ascending
+					width = medium
+				)
+				Spouse_Full_Name
+				(
+					type = picklist	
+					displayname = "Spouse Full Name"
+					values  = Personal_Info.ID
+    				displayformat = [Spouse_Full_Name]
+					sortorder = ascending
+					width = medium
+				)
+				Company_Name
+				(
+    				type = text
+					displayname = "Company Name "
+					width = medium
+				)
+				Applicable
+				(
+					type = checkboxes	
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				File_Upload
+				(
+    				type = upload file
+					displayname = "File Upload"
+    				file count = 10
+				browse = local_drive
+					width = medium
+				)
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Interest_Income
+			(
+				type = grid
+				displayname = "1099 INT"
+				Type_field
+				(
+					type = picklist
+					maxchar = 100
+					values = {"Taxpayer","Spouse"}
+					width = medium
+				)
+				Taxpayer_Full_Name
+				(
+					type = picklist	
+					displayname = "Taxpayer Full Name"
+					values  = Personal_Info.ID
+    				displayformat = [Taxpayer_Full_Name]
+					sortorder = ascending
+					width = medium
+				)
+				Spouse_Full_Name
+				(
+					type = picklist	
+					displayname = "Spouse Full Name"
+					values  = Personal_Info.ID
+    				displayformat = [Spouse_Full_Name]
+					sortorder = ascending
+					width = medium
+				)
+				Bank_Name
+				(
+    				type = text
+					displayname = "Bank Name"
+					width = medium
+				)
+				Applicable
+				(
+					type = checkboxes	
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				File_upload
+				(
+    				type = upload file
+					displayname = "File upload"
+    				file count = 10
+				browse = local_drive
+					width = medium
+				)
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Dependents
+		{
+			success message = "Dependents Added Successfully"
+			Personal_Info
+			(
+				type = section
+				displayname = "Personal Info"
+				visibility = true
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Tax_Payer_Full_name
+			(
+				type = picklist	
+				displayname = "Tax Payer Full name"
+				values  = Personal_Info.ID
+    			displayformat = [Taxpayer_Full_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Dependents_Information
+			(
+				type = grid
+				displayname = "Dependents Information"
+				Dependents_Name
+				(
+    				type = text
+					displayname = "Dependents Name"
+					width = medium
+				)
+				Date_of_Birth
+				(
+    				type = datetime
+					displayname = "Date of Birth"
+					timedisplayoptions = "hh:mm:ss"
+					alloweddays = 0,1,2,3,4,5,6
+					width = medium
+				)
+				Social_Security_ITIN
+				(
+    				type = text
+					displayname = "Social Security/ITIN #"
+					width = medium
+				)
+				Relationship
+				(
+					type = picklist
+					maxchar = 100
+					values = {"Son","Daughter","Child","Parent","Other"}
+					width = medium
+				)
+				Mos_In_Home
+				(
+					type = number
+					displayname = "Mos. In Home"
+					width = medium
+				)
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Section_Notes
+			(
+				type = section
+				displayname = "Notes to Preparer"
+				visibility = true
+	 			row = 3
+	 			column = 0   
+				width = medium
+			)
+			Notes_to_Preparer
+			(
+    			type = textarea
+				displayname = "Notes to Preparer"
+				height = 100px
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Estimated_Tax
+		{
+			displayname = "Estimated Tax"
+			success message = "Tax Added Successfully"
+			FEDERAL_ESTIMATED_TAX_PAYMENTS
+			(
+				type = grid
+				displayname = "FEDERAL ESTIMATED TAX PAYMENTS	 "
+				Date_Time
+				(
+    				type = datetime
+					displayname = "Date-Time"
+					timedisplayoptions = "hh:mm:ss"
+					alloweddays = 0,1,2,3,4,5,6
+					width = medium
+				)
+				Installment_Paid
+				(
+    				type = upload file
+					displayname = "Installment Paid"
+				browse = local_drive
+					width = medium
+				)
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Estimated"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form FBAR1
+		{
+			displayname = "FBAR"
+			success message = "Data Added Successfully!"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Tax_Payer_Full_name
+			(
+				type = picklist	
+				displayname = "Tax Payer Full name"
+				values  = Personal_Info.ID
+    			displayformat = [Taxpayer_Full_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Tax_Year
+			(
+    			type = text
+				displayname = "Tax Year"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Spouse_Full_name
+			(
+				type = picklist	
+				displayname = "Spouse Full name"
+				values  = Personal_Info.ID
+    			displayformat = [Spouse_Full_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 2   
+				width = medium
+			)
+			Taxpayer_Separately
+			(
+				type = grid
+				displayname = "Taxpayer Separately"
+				Maximum_value_of_the_account_in_Rupees
+				(
+					displayname = "Maximum value of the account in Rupees₹"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Maximum_value_of_the_account_in_US
+				(
+					displayname = "Maximum value of the account in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Type_of_Account
+				(
+					type = picklist
+					displayname = "Type of Account"
+					maxchar = 100
+					values = {"Bank","Securities"}
+					others option = true
+					width = medium
+				)
+				Account_Opened_During_Tax_Year
+				(
+					type = picklist
+					displayname = "Account Opened During Tax Year"
+					maxchar = 100
+					values = {"Yes","No"}
+					width = medium
+				)
+				Account_Closed_During_Tax_Year
+				(
+					type = picklist
+					displayname = "Account Closed During Tax Year"
+					maxchar = 100
+					values = {"Yes","No"}
+					width = medium
+				)
+				Name_of_the_Financial_Institution
+				(
+    				type = text
+					displayname = "Name of the Financial Institution"
+					width = medium
+				)
+				Account_Number
+				(
+    				type = text
+					displayname = "Account Number"
+					width = medium
+				)
+				Address
+				(
+    				type = address
+     				capture_coordinates = true
+     				adjust_using_map = false
+     				address_line_1
+     				(
+	     				  type = address_line_1
+	     				  displayname = "Address Line 1"
+     				) 
+     				address_line_2
+     				(
+	     				  type = address_line_2
+	     				  displayname = "Address Line 2"
+     				) 
+     				district_city
+     				(
+	     				  type = district_city
+	     				  displayname = "Address Line 3"
+     				) 
+     				state_province
+     				(
+	     				  type = state_province
+	     				  displayname = "State / Province"
+	     				 visibility = false
+     				) 
+     				postal_Code
+     				(
+	     				  type = postal_Code
+	     				  displayname = "Postal Code"
+	     				 visibility = false
+     				) 
+     				country
+     				(
+	     				  type = country
+	     				  displayname = "Country"
+	     				 visibility = false
+     				) 
+     				latitude
+     				(
+	     				  type = latitude
+	     				  displayname = "latitude"
+	     				 visibility = false
+     				) 
+     				longitude
+     				(
+	     				  type = longitude
+	     				  displayname = "longitude"
+	     				 visibility = false
+     				) 
+					width = medium
+					personal data = true
+				)
+				Interest_Received_Accrued_in_Rupees
+				(
+					displayname = "Interest Received/Accrued in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Interest_Received_Accrued_in_US
+				(
+					displayname = "Interest Received/Accrued in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Dividend_Distributed_in_Rupees
+				(
+					displayname = "Dividend Distributed in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Dividend_Distributed_in_US
+				(
+					displayname = "Dividend Distributed in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Tax_Paid_Outside_US_in_Rupees
+				(
+					displayname = "Tax Paid Outside US in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Tax_Paid_Outside_US_in_US
+				(
+					displayname = "Tax Paid Outside US in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Foreign_Currency_Account_Maintained
+				(
+					type = picklist
+					displayname = "Foreign Currency Account Maintained"
+					maxchar = 100
+					values = {"INR","USD","EUR","GBP","AED"}
+					others option = true
+					width = medium
+				)
+				Exchange_Rate_Used_Rupees_US
+				(
+					type = decimal
+					displayname = "Exchange Rate Used (Rupees/US$)"
+					maxchar = 16
+					decimalplace = 10
+					width = medium
+				)
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Taxpayer_Jointly
+			(
+				type = grid
+				displayname = "Taxpayer Jointly"
+				Maximum_value_of_the_account_in_Rupees
+				(
+					displayname = "Maximum value of the account in Rupees₹"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Maximum_value_of_the_account_in_US
+				(
+					displayname = "Maximum value of the account in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Type_of_Account
+				(
+					type = picklist
+					displayname = "Type of Account"
+					maxchar = 100
+					values = {"Bank","Securities"}
+					others option = true
+					width = medium
+				)
+				Account_Opened_During_Tax_Year
+				(
+					type = picklist
+					displayname = "Account Opened During Tax Year"
+					maxchar = 100
+					values = {"Yes","No"}
+					width = medium
+				)
+				Account_Closed_During_Tax_Year
+				(
+					type = picklist
+					displayname = "Account Closed During Tax Year"
+					maxchar = 100
+					values = {"Yes","No"}
+					width = medium
+				)
+				Name_of_the_Financial_Institution
+				(
+    				type = text
+					displayname = "Name of the Financial Institution"
+					width = medium
+				)
+				Account_Number
+				(
+    				type = text
+					displayname = "Account Number"
+					width = medium
+				)
+				Address
+				(
+    				type = address
+     				capture_coordinates = true
+     				adjust_using_map = false
+     				address_line_1
+     				(
+	     				  type = address_line_1
+	     				  displayname = "Address Line 1"
+     				) 
+     				address_line_2
+     				(
+	     				  type = address_line_2
+	     				  displayname = "Address Line 2"
+     				) 
+     				district_city
+     				(
+	     				  type = district_city
+	     				  displayname = "Address Line 3"
+     				) 
+     				state_province
+     				(
+	     				  type = state_province
+	     				  displayname = "State / Province"
+	     				 visibility = false
+     				) 
+     				postal_Code
+     				(
+	     				  type = postal_Code
+	     				  displayname = "Postal Code"
+	     				 visibility = false
+     				) 
+     				country
+     				(
+	     				  type = country
+	     				  displayname = "Country"
+	     				 visibility = false
+     				) 
+     				latitude
+     				(
+	     				  type = latitude
+	     				  displayname = "latitude"
+	     				 visibility = false
+     				) 
+     				longitude
+     				(
+	     				  type = longitude
+	     				  displayname = "longitude"
+	     				 visibility = false
+     				) 
+					width = medium
+					personal data = true
+				)
+				Interest_Received_Accrued_in_Rupees
+				(
+					displayname = "Interest Received/Accrued in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Interest_Received_Accrued_in_US
+				(
+					displayname = "Interest Received/Accrued in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Dividend_Distributed_in_Rupees
+				(
+					displayname = "Dividend Distributed in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Dividend_Distributed_in_US
+				(
+					displayname = "Dividend Distributed in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Tax_Paid_Outside_US_in_Rupees
+				(
+					displayname = "Tax Paid Outside US in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Tax_Paid_Outside_US_in_US
+				(
+					displayname = "Tax Paid Outside US in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Foreign_Currency_Account_Maintained
+				(
+					type = picklist
+					displayname = "Foreign Currency Account Maintained"
+					maxchar = 100
+					values = {"IND","USD","EUR","GBP","AED"}
+					others option = true
+					width = medium
+				)
+				Exchange_Rate_Used_Rupees_US
+				(
+					type = decimal
+					displayname = "Exchange Rate Used (Rupees/US$)"
+					maxchar = 16
+					decimalplace = 10
+					width = medium
+				)
+				Joint_Owner_Relationship
+				(
+					type = picklist
+					displayname = "Joint Owner Relationship"
+					maxchar = 100
+					values = {"Spouse","Father","Mother","Son","Daughter","Sibling"}
+					others option = true
+					width = medium
+				)
+				Joint_Owner_First_Name
+				(
+    				type = text
+					displayname = "Joint Owner First Name"
+					width = medium
+				)
+				Joint_Owner_Last_Name
+				(
+    				type = text
+					displayname = "Joint Owner Last Name"
+					width = medium
+				)
+				Joint_Owner_SSN_or_TIN
+				(
+    				type = text
+					displayname = "Joint Owner SSN or TIN"
+					width = medium
+				)
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Spouse_Separately
+			(
+				type = grid
+				displayname = "Spouse Separately"
+				Maximum_value_of_the_account_in_Rupees
+				(
+					displayname = "Maximum value of the account in Rupees₹"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Maximum_value_of_the_account_in_US
+				(
+					displayname = "Maximum value of the account in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Type_of_Account
+				(
+					type = picklist
+					displayname = "Type of Account"
+					maxchar = 100
+					values = {"Bank","Securities"}
+					others option = true
+					width = medium
+				)
+				Account_Opened_During_Tax_Year
+				(
+					type = picklist
+					displayname = "Account Opened During Tax Year"
+					maxchar = 100
+					values = {"Yes","No"}
+					width = medium
+				)
+				Account_Closed_During_Tax_Year
+				(
+					type = picklist
+					displayname = "Account Closed During Tax Year"
+					maxchar = 100
+					values = {"Yes","No"}
+					width = medium
+				)
+				Name_of_the_Financial_Institution
+				(
+    				type = text
+					displayname = "Name of the Financial Institution"
+					width = medium
+				)
+				Account_Number
+				(
+    				type = text
+					displayname = "Account Number"
+					width = medium
+				)
+				Address
+				(
+    				type = address
+     				capture_coordinates = true
+     				adjust_using_map = false
+     				address_line_1
+     				(
+	     				  type = address_line_1
+	     				  displayname = "Address Line 1"
+     				) 
+     				address_line_2
+     				(
+	     				  type = address_line_2
+	     				  displayname = "Address Line 2"
+     				) 
+     				district_city
+     				(
+	     				  type = district_city
+	     				  displayname = "Address Line 3"
+     				) 
+     				state_province
+     				(
+	     				  type = state_province
+	     				  displayname = "State / Province"
+	     				 visibility = false
+     				) 
+     				postal_Code
+     				(
+	     				  type = postal_Code
+	     				  displayname = "Postal Code"
+	     				 visibility = false
+     				) 
+     				country
+     				(
+	     				  type = country
+	     				  displayname = "Country"
+	     				 visibility = false
+     				) 
+     				latitude
+     				(
+	     				  type = latitude
+	     				  displayname = "latitude"
+	     				 visibility = false
+     				) 
+     				longitude
+     				(
+	     				  type = longitude
+	     				  displayname = "longitude"
+	     				 visibility = false
+     				) 
+					width = medium
+					personal data = true
+				)
+				Interest_Received_Accrued_in_Rupees
+				(
+					displayname = "Interest Received/Accrued in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Interest_Received_Accrued_in_US
+				(
+					displayname = "Interest Received/Accrued in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Dividend_Distributed_in_Rupees
+				(
+					displayname = "Dividend Distributed in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Dividend_Distributed_in_US
+				(
+					displayname = "Dividend Distributed in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Tax_Paid_Outside_US_in_Rupees
+				(
+					displayname = "Tax Paid Outside US in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Tax_Paid_Outside_US_in_US
+				(
+					displayname = "Tax Paid Outside US in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Foreign_Currency_Account_Maintained
+				(
+					type = picklist
+					displayname = "Foreign Currency Account Maintained"
+					maxchar = 100
+					values = {"INR","USD","EUR","GBP","AED"}
+					others option = true
+					width = medium
+				)
+				Exchange_Rate_Used_Rupees_US
+				(
+					type = decimal
+					displayname = "Exchange Rate Used (Rupees/US$)"
+					maxchar = 16
+					decimalplace = 10
+					width = medium
+				)
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Spouse_Jointly
+			(
+				type = grid
+				displayname = "Spouse Jointly"
+				Maximum_value_of_the_account_in_Rupees
+				(
+					displayname = "Maximum value of the account in Rupees₹"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Maximum_value_of_the_account_in_US
+				(
+					displayname = "Maximum value of the account in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Type_of_Account
+				(
+					type = picklist
+					displayname = "Type of Account"
+					maxchar = 100
+					values = {"Bank","Securities"}
+					others option = true
+					width = medium
+				)
+				Account_Opened_During_Tax_Year
+				(
+					type = picklist
+					displayname = "Account Opened During Tax Year"
+					maxchar = 100
+					values = {"Yes","No"}
+					width = medium
+				)
+				Account_Closed_During_Tax_Year
+				(
+					type = picklist
+					displayname = "Account Closed During Tax Year"
+					maxchar = 100
+					values = {"Yes","No"}
+					width = medium
+				)
+				Name_of_the_Financial_Institution
+				(
+    				type = text
+					displayname = "Name of the Financial Institution"
+					width = medium
+				)
+				Account_Number
+				(
+    				type = text
+					displayname = "Account Number"
+					width = medium
+				)
+				Address
+				(
+    				type = address
+     				capture_coordinates = true
+     				adjust_using_map = false
+     				address_line_1
+     				(
+	     				  type = address_line_1
+	     				  displayname = "Address Line 1"
+     				) 
+     				address_line_2
+     				(
+	     				  type = address_line_2
+	     				  displayname = "Address Line 2"
+     				) 
+     				district_city
+     				(
+	     				  type = district_city
+	     				  displayname = "Address Line 3"
+     				) 
+     				state_province
+     				(
+	     				  type = state_province
+	     				  displayname = "State / Province"
+	     				 visibility = false
+     				) 
+     				postal_Code
+     				(
+	     				  type = postal_Code
+	     				  displayname = "Postal Code"
+	     				 visibility = false
+     				) 
+     				country
+     				(
+	     				  type = country
+	     				  displayname = "Country"
+	     				 visibility = false
+     				) 
+     				latitude
+     				(
+	     				  type = latitude
+	     				  displayname = "latitude"
+	     				 visibility = false
+     				) 
+     				longitude
+     				(
+	     				  type = longitude
+	     				  displayname = "longitude"
+	     				 visibility = false
+     				) 
+					width = medium
+					personal data = true
+				)
+				Interest_Received_Accrued_in_Rupees
+				(
+					displayname = "Interest Received/Accrued in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Interest_Received_Accrued_in_US
+				(
+					displayname = "Interest Received/Accrued in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Dividend_Distributed_in_Rupees
+				(
+					displayname = "Dividend Distributed in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Dividend_Distributed_in_US
+				(
+					displayname = "Dividend Distributed in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Tax_Paid_Outside_US_in_Rupees
+				(
+					displayname = "Tax Paid Outside US in Rupees"
+					type = INR
+					format = commadotwestern
+					width = medium
+				)
+				Tax_Paid_Outside_US_in_US
+				(
+					displayname = "Tax Paid Outside US in US$"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Foreign_Currency_Account_Maintained
+				(
+					type = picklist
+					displayname = "Foreign Currency Account Maintained"
+					maxchar = 100
+					values = {"INR","USD","EUR","GBP","AED"}
+					others option = true
+					width = medium
+				)
+				Exchange_Rate_Used_Rupees_US
+				(
+					type = decimal
+					displayname = "Exchange Rate Used (Rupees/US$)"
+					maxchar = 16
+					decimalplace = 10
+					width = medium
+				)
+				Joint_Owner_Relationship
+				(
+					type = picklist
+					displayname = "Joint Owner Relationship"
+					maxchar = 100
+					values = {"Spouse","Father","Mother","Son","Daughter","Sibling"}
+					others option = true
+					width = medium
+				)
+				Joint_Owner_First_Name
+				(
+    				type = text
+					displayname = "Joint Owner First Name"
+					width = medium
+				)
+				Joint_Owner_Last_Name
+				(
+    				type = text
+					displayname = "Joint Owner Last Name"
+					width = medium
+				)
+				Joint_Owner_SSN_or_TIN
+				(
+    				type = text
+					displayname = "Joint Owner SSN or TIN"
+					width = medium
+				)
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Notes
+			(
+				type = section
+				visibility = true
+	 			row = 3
+	 			column = 0   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "<ol style=\"box-sizing: border-box; margin: 8px 0px 0px; padding-left: 20px; color: rgb(50, 57, 67); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-color: initial\" id=\"notesList\"><li style=\"box-sizing: border-box; margin: 3px 0px\"><b>For life insurance, state the cash value in the maximum value of the account.</b><b><br /></b></li><li style=\"box-sizing: border-box; margin: 3px 0px\"><b>If the filer has signature authority on any account and no financial interest in the account, such accounts are to be detailed as well.</b><b><br /></b></li><li style=\"box-sizing: border-box; margin: 3px 0px\"><b>Enter Rupees and it will be converted to US$ with the exchange rate.</b><b><br /></b></li><li style=\"box-sizing: border-box; margin: 3px 0px\"><b>Account opened and closed default to No — change to Yes as necessary.</b><b><br /></b></li></ol><div><span class=\"font\" style=\"font-family: RobotoCondensed, sans-serif\">​</span><br /></div>"
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Personal_Info
+		{
+			displayname = "Personal Info"
+			success message = "Personal Info Added Successfully"
+			Section_Filing_Status
+			(
+				type = section
+				displayname = "Filing Status"
+				visibility = true
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Filing_Status
+			(
+				type = picklist
+				displayname = "Filing Status"
+				values = {"Single","Married Filing Jointly","Married Filing Separately","Head of Household","Qualifying Surviving Spouse"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Section_Taxpayer_Info
+			(
+				type = section
+				displayname = "Taxpayer Information"
+				visibility = true
+	 			row = 2
+	 			column = 0   
+				width = medium
+			)
+			Taxpayer_First_Name
+			(
+    			type = text
+				displayname = "Taxpayer First Name"
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Taxpayer_Occupation
+			(
+    			type = text
+				displayname = "Taxpayer Occupation"
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Taxpayer_Main_Phone
+			(
+    			type = text
+				displayname = "Taxpayer Main Phone"
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Taxpayer_Full_Name
+			(
+    			type = formula
+				displayname = "Taxpayer Full Name"
+				value =  input.Taxpayer_First_Name + " " + input.Taxpayer_Middle_Name + " " + input.Taxpayer_Last_Name
+				visibility = false
+				display type = text
+				format = plaintext
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Taxpayer_Middle_Name
+			(
+    			type = text
+				displayname = "Taxpayer Middle Name"
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Taxpayer_DOB
+			(
+    			type = date
+				displayname = "Taxpayer DOB"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Taxpayer_Other_Phone
+			(
+    			type = text
+				displayname = "Taxpayer Other Phone"
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Taxpayer_Last_Name
+			(
+    			type = text
+				displayname = "Taxpayer Last Name"
+	 			row = 2
+	 			column = 3   
+				width = medium
+			)
+			Taxpayer_SSN
+			(
+    			type = text
+				displayname = "Soc. Sec. #"
+	 			row = 2
+	 			column = 3   
+				width = medium
+			)
+			Taxpayer_Email
+			(
+    			type = email
+				displayname = "Email Address"
+	 			row = 2
+	 			column = 3   
+				width = medium
+			)
+			Section_Spouse_Info
+			(
+				type = section
+				displayname = "Spouse Information"
+				visibility = true
+	 			row = 3
+	 			column = 0   
+				width = medium
+			)
+			Spouse_First_Name
+			(
+    			type = text
+				displayname = "Spouse First Name"
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Spouse_Occupation
+			(
+    			type = text
+				displayname = "Spouse Occupation"
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Spouse_Main_Phone
+			(
+    			type = text
+				displayname = "Spouse Main Phone"
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Spouse_Full_Name
+			(
+    			type = formula
+				displayname = "Spouse Full Name "
+				value =  input.Spouse_First_Name + " " + input.Spouse_Middle_Name + " " + input.Spouse_Last_Name
+				visibility = false
+				display type = text
+				format = plaintext
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Spouse_Middle_Name
+			(
+    			type = text
+				displayname = "Spouse Middle Name"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Spouse_DOB
+			(
+    			type = date
+				displayname = "Spouse DOB"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Spouse_Other_Phone
+			(
+    			type = text
+				displayname = "Spouse Other Phone"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Spouse_Last_Name
+			(
+    			type = text
+				displayname = "Spouse Last Name"
+	 			row = 3
+	 			column = 3   
+				width = medium
+			)
+			Spouse_SSN_ITIN
+			(
+    			type = text
+				displayname = "Spouse Soc./ITIN #"
+	 			row = 3
+	 			column = 3   
+				width = medium
+			)
+			Spouse_Email
+			(
+    			type = email
+				displayname = "Spouse Email"
+	 			row = 3
+	 			column = 3   
+				width = medium
+			)
+			Section_Mailing_Address
+			(
+				type = section
+				displayname = "Mailing Address"
+				visibility = true
+	 			row = 4
+	 			column = 0   
+				width = medium
+			)
+			Mailing_Address
+			(
+    			type = textarea
+				displayname = "Mailing Address"
+				height = 100px
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			State_Field
+			(
+    			type = text
+				displayname = "State"
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			City
+			(
+    			type = text
+	 			row = 4
+	 			column = 2   
+				width = medium
+			)
+			Zip
+			(
+    			type = text
+	 			row = 4
+	 			column = 2   
+				width = medium
+			)
+			Your_Residential_Status
+			(
+				type = section
+				displayname = "Your Residential Status"
+				visibility = true
+	 			row = 5
+	 			column = 0   
+				width = medium
+			)
+			Residential_Status
+			(
+				type = picklist
+				displayname = "Your Residential Status"
+				values = {"US Citizen","Green Card Holder","H1B Visa","L1 Visa","F1 Visa","Others-Comment"}
+	 			row = 5
+	 			column = 1   
+				width = medium
+			)
+			Section_Residency
+			(
+				type = section
+				displayname = "Days below required for Non Citizen & Non GC Holders"
+				visibility = true
+	 			row = 6
+	 			column = 0   
+				width = medium
+			)
+			Days_Present_in_US_2025
+			(
+				type = number
+				displayname = "Number of Days Present in US in 2025"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Days_Present_in_US_2024
+			(
+				type = number
+				displayname = "Number of Days Present in US in 2024"
+	 			row = 6
+	 			column = 2   
+				width = medium
+			)
+			Days_Present_in_US_2023
+			(
+				type = number
+				displayname = "Number of Days Present in US in 2023"
+	 			row = 6
+	 			column = 3   
+				width = medium
+			)
+			Section_Direct_Deposit
+			(
+				type = section
+				displayname = "Direct Deposit Refunds/Debits"
+				visibility = true
+	 			row = 7
+	 			column = 0   
+				width = medium
+			)
+			Bank_Name
+			(
+    			type = text
+				displayname = "Bank Name"
+	 			row = 7
+	 			column = 1   
+				width = medium
+			)
+			Routing_Number
+			(
+    			type = text
+				displayname = "Routing"
+	 			row = 7
+	 			column = 1   
+				width = medium
+			)
+			Drake_Status
+			(
+				type = picklist
+				displayname = "Drake Status"
+				maxchar = 100
+				values = {"Finished","Error","In Progress"}
+	 			row = 7
+	 			column = 1   
+				width = medium
+			)
+			Account_Number
+			(
+    			type = text
+				displayname = "Account Number"
+	 			row = 7
+	 			column = 2   
+				width = medium
+			)
+			Account_Type
+			(
+				type = radiobuttons
+				displayname = "Account Type"
+				values = {"Checking","Savings"}
+	 			row = 7
+	 			column = 2   
+				width = medium
+			)
+			Drake_Message
+			(
+    			type = textarea
+				displayname = "Drake Message"
+				height = 100px
+	 			row = 7
+	 			column = 2   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+	}
+	reports
+	{
+		default list All_Personal_Infos
+		{
+			displayName = "All Personal Infos"
+			show all rows from Personal_Info    
+			(
+				Taxpayer_Full_Name as "Taxpayer Full Name"
+				custom action "Drake"
+				(
+	  			workflow = Drake_Connection
+				show action in edit record menu = true
+				column header = "Drake"
+				)
+				Spouse_Full_Name as "Spouse Full Name "
+				Taxpayer_First_Name as "Taxpayer First Name"
+				Taxpayer_Occupation as "Taxpayer Occupation"
+				Taxpayer_Middle_Name as "Taxpayer Middle Name"
+				Taxpayer_DOB as "Taxpayer DOB"
+				Taxpayer_Last_Name as "Taxpayer Last Name"
+				Taxpayer_SSN as "Soc. Sec. #"
+				Taxpayer_Email as "Email Address"
+				Spouse_First_Name as "Spouse First Name"
+				Spouse_Occupation as "Spouse Occupation"
+				Spouse_Middle_Name as "Spouse Middle Name"
+				Spouse_DOB as "Spouse DOB"
+				Spouse_Last_Name as "Spouse Last Name"
+				Spouse_SSN_ITIN as "Spouse Soc./ITIN #"
+				Spouse_Email as "Spouse Email"
+				Mailing_Address as "Mailing Address"
+				State_Field as "State"
+				City
+				Zip
+				Residential_Status as "Your Residential Status"
+				Days_Present_in_US_2025 as "Number of Days Present in US in 2025"
+				Days_Present_in_US_2024 as "Number of Days Present in US in 2024"
+				Days_Present_in_US_2023 as "Number of Days Present in US in 2023"
+				Bank_Name as "Bank Name"
+				Routing_Number as "Routing"
+				Account_Number as "Account Number"
+				Account_Type as "Account Type"
+				Taxpayer_Main_Phone as "Taxpayer Main Phone"
+				Taxpayer_Other_Phone as "Taxpayer Other Phone"
+				Spouse_Main_Phone as "Spouse Main Phone"
+				Spouse_Other_Phone as "Spouse Other Phone"
+				Filing_Status as "Filing Status"
+				Drake_Status as "Drake Status"
+				Drake_Message as "Drake Message"
+			)
+			conditional formatting
+			(
+				"Finished"
+				{
+				condition = (Drake_Status == "Finished")
+				fields = [Drake_Status]
+				format = "background-color:#5dc35a;"
+				}
+				"Error"
+				{
+				condition = (Drake_Status == "Error")
+				fields = [Drake_Status]
+				format = "background-color:#ef1616;"
+				}
+				"In Progress"
+				{
+				condition = (Drake_Status == "In Progress")
+				fields = [Drake_Status]
+				format = "background-color:#efb116;"
+				}
+			)
+			customlayouts
+			(
+				template
+	 			(
+	 	  			displayname="Custom Layout 1"
+	 	  			content="<panel  \n >\n	<pr \n			width='fill'\n>\n	<pc \n		padding = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<pr \n	>\n	<pc \n		padding = '0px'\n	bgColor = '#FFFFFF'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<pr \n	>\n	<pc \n		padding = '16px'\n	bgColor = '#FAFAFA'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'center'\n>\n	<pr \n	>\n	<pc \n		padding = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '50%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<pr \n	>\n	<pc \n		paddingTop = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	padding = '0px'\n	color = '#6B7280'\n	size = '12px'\n	type = 'field'\n\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n	cornerRadius = '0px'\n\n    lineHeight = '16'\n    numOfLines = '1'\n\n\n\n\n    borderColor = '#6B7280'\n    borderWidth = '0px'\n\n	  value = 'Taxpayer_Other_Phone'\n>\n</text>\n\n</pc>\n</pr>\n</pc><pc \n		padding = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '50%'\n		hAlign = 'right'\n		vAlign = 'top'\n>\n	<pr \n	>\n	<pc \n		padding = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = 'auto'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	paddingTop = '6px'\n	paddingLeft = '8px'\n	paddingRight = '8px'\n	paddingBottom = '6px'\n	color = '#1E40AF'\n	size = '13px'\n	type = 'field'\n\n	bgColor = '#DBEAFE'\n        bgColorType = 'noFill'\n	cornerRadius = '4px'\n\n    lineHeight = '30'\n    numOfLines = '1'\n\n\n\n\n\n	  value = 'Taxpayer_First_Name'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr><pr \n			height='1px'\n>\n	<pc \n		paddingTop = '0px'\n	paddingLeft = '1px'\n	paddingRight = '1px'\n	paddingBottom = '0px'\n	bgColor = '#F3F3F3'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<pr \n			width='auto'\n		height='auto'\n>\n	<pc \n	\n>\n	\n</pc>\n</pr>\n</pc>\n</pr><pr \n	>\n	<pc \n		padding = '16px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<pr \n	>\n	<pc \n	\n		width = '32%'\n>\n	<pr \n			width='fill'\n>\n	<pc \n		padding = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	padding = '0px'\n	color = '#6B7280'\n	size = '12px'\n	type = 'Text'\n\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n	cornerRadius = '0px'\n\n\n\n\n\n\n	  value = 'Property Address'\n>\n</text>\n\n</pc>\n</pr><pr \n			width='fill'\n>\n	<pc \n		paddingTop = '6px'\n	paddingLeft = '0px'\n	paddingRight = '0px'\n	paddingBottom = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	padding = '0px'\n	color = '#020C27'\n	size = '14px'\n	bold = 'true' \n	type = 'field'\n\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n	cornerRadius = '0px'\n\n    lineHeight = '19'\n    numOfLines = '1'\n\n\n\n\n\n	  value = 'Taxpayer_Occupation'\n>\n</text>\n\n</pc>\n</pr>\n</pc><pc \n	\n		width = '17%'\n>\n	<pr \n			width='fill'\n>\n	<pc \n		padding = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	padding = '0px'\n	color = '#6B7280'\n	size = '12px'\n	type = 'Text'\n\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n	cornerRadius = '0px'\n\n\n\n\n\n\n	  value = 'Loan amount'\n>\n</text>\n\n</pc>\n</pr><pr \n			width='fill'\n>\n	<pc \n		paddingTop = '6px'\n	paddingLeft = '0px'\n	paddingRight = '0px'\n	paddingBottom = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	padding = '0px'\n	color = '#020C27'\n	size = '14px'\n	bold = 'true' \n	type = 'field'\n\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n	cornerRadius = '0px'\n\n    lineHeight = '19'\n    numOfLines = '1'\n\n\n\n\n\n	  value = 'Taxpayer_Main_Phone'\n>\n</text>\n\n</pc>\n</pr>\n</pc><pc \n	\n		width = '17%'\n>\n	<pr \n			width='fill'\n>\n	<pc \n		padding = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	padding = '0px'\n	color = '#6B7280'\n	size = '12px'\n	type = 'Text'\n\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n	cornerRadius = '0px'\n\n\n\n\n\n\n	  value = 'Loan type'\n>\n</text>\n\n</pc>\n</pr><pr \n			width='fill'\n>\n	<pc \n		paddingTop = '6px'\n	paddingLeft = '0px'\n	paddingRight = '0px'\n	paddingBottom = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	padding = '0px'\n	color = '#020C27'\n	size = '14px'\n	bold = 'true' \n	type = 'field'\n\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n	cornerRadius = '0px'\n\n    lineHeight = '19'\n    numOfLines = '1'\n\n\n\n\n\n	  value = 'Taxpayer_Full_Name'\n>\n</text>\n\n</pc>\n</pr>\n</pc><pc \n	\n		width = '17%'\n>\n	<pr \n			width='fill'\n>\n	<pc \n		padding = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	padding = '0px'\n	color = '#6B7280'\n	size = '12px'\n	type = 'Text'\n\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n	cornerRadius = '0px'\n\n\n\n\n\n\n	  value = 'Loan purpose'\n>\n</text>\n\n</pc>\n</pr><pr \n			width='fill'\n>\n	<pc \n		paddingTop = '6px'\n	paddingLeft = '0px'\n	paddingRight = '0px'\n	paddingBottom = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	padding = '0px'\n	color = '#020C27'\n	size = '14px'\n	bold = 'true' \n	type = 'field'\n\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n	cornerRadius = '0px'\n\n    lineHeight = '19'\n    numOfLines = '1'\n\n\n\n\n\n	  value = 'Taxpayer_Middle_Name'\n>\n</text>\n\n</pc>\n</pr>\n</pc><pc \n	\n		width = '17%'\n>\n	<pr \n			width='fill'\n>\n	<pc \n		paddingTop = '0px'\n	paddingLeft = '0px'\n	paddingRight = '22px'\n	paddingBottom = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '240.5px'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	padding = '0px'\n	color = '#6B7280'\n	size = '12px'\n	type = 'Text'\n\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n	cornerRadius = '0px'\n\n\n\n\n\n\n	  value = 'Lender Connection'\n>\n</text>\n\n</pc>\n</pr><pr \n			width='fill'\n>\n	<pc \n		paddingTop = '6px'\n	paddingLeft = '0px'\n	paddingRight = '22px'\n	paddingBottom = '0px'\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'top'\n>\n	<text \n\n	margin = '0px'\n	padding = '0px'\n	color = '#020C27'\n	size = '14px'\n	bold = 'true' \n	type = 'field'\n\n	bgColor = 'transparent'\n        bgColorType = 'noFill'\n	cornerRadius = '0px'\n\n    lineHeight = '19'\n    numOfLines = '1'\n\n\n\n\n\n	  value = 'Taxpayer_DOB'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</panel>"
+	    		)
+			)
+		}
+		default list All_Dependents
+		{
+			displayName = "All Dependents"
+			show all rows from Dependents    
+			(
+				Notes_to_Preparer as "Notes to Preparer"
+				Dependents_Information as "Dependents Information"
+				(
+					field = Dependents_Information.Dependents_Name + " " + Dependents_Information.Date_of_Birth + " " + Dependents_Information.Mos_In_Home + " " + Dependents_Information.Relationship + " " + Dependents_Information.Social_Security_ITIN
+				)
+				custom action "Drake"
+				(
+	  			workflow = OnAutomation
+				show action in edit record menu = true
+				column header = "Drake"
+				)
+				Tax_Payer_Full_name as "Tax Payer Full name"
+			)
+		}
+		default list All_Additional_Information
+		{
+			displayName = "All Additional Information"
+			show all rows from Additional_Information    
+			(
+				Do_you_have_a_foreign_bank_account as "Do you have a foreign bank account?"
+				Country_of_Foreign_Account as "Country of Foreign Account"
+				Are_you_required_to_file_for_FBAR as "Are you required to file for FBAR?"
+				Would_you_want_us_to_file_for_FBAR as "Would you want us to file for FBAR?"
+				FBAR_for as "FBAR for"
+				Did_you_receive_sell_exchange_gift_or_acquire_financial_interest_in_Digital_Asset as "Did you receive, sell, exchange, gift or acquire financial interest in Digital Asset?"
+				Drop_DownDid_you_and_family_have_health_insurance as "Drop DownDid you and family have health insurance?"
+				Upload_1095A_if_Market_Place_coverage as "Upload 1095A if Market Place coverage"
+				Tax_Payer_Full_name as "Tax Payer Full name"
+				Do_you_have_self_employment_income as "Do you have self employment income (1099-NEC/1099-K/Cash)?"
+				Do_you_own_Foreign_Mutual_Funds as "Do you own Foreign Mutual Funds?"
+				Do_you_have_rental_property as "Do you have rental property?"
+				States_worked_in_during_the_tax_year as "States worked in during the tax year	 	 	 "
+				(
+					field = States_worked_in_during_the_tax_year.State + " " + States_worked_in_during_the_tax_year.From + " " + States_worked_in_during_the_tax_year.To
+				)
+				States_lived_in_during_the_tax_year as "States lived in during the tax year	 	 	 "
+				(
+					field = States_lived_in_during_the_tax_year.State + " " + States_lived_in_during_the_tax_year.From + " " + States_lived_in_during_the_tax_year.To
+				)
+				custom action "Drake"
+				(
+	  			workflow = Drake_Automation
+				show action in edit record menu = true
+				column header = "Drake"
+				)
+			)
+		}
+		default list All_Checklist
+		{
+			displayName = "All Checklist"
+			show all rows from Checklist    
+			(
+				W2
+				(
+					field = W2.Type_field + " " + W2.Applicable + " " + W2.Company_Name + " " + W2.Spouse_Full_Name + " " + W2.Taxpayer_Full_Name
+				)
+				Interest_Income as "1099 INT"
+				(
+					field = Interest_Income.Type_field + " " + Interest_Income.Applicable + " " + Interest_Income.Bank_Name + " " + Interest_Income.Spouse_Full_Name + " " + Interest_Income.Taxpayer_Full_Name
+				)
+				Tax_Payer_Full_name as "Tax Payer Full name"
+				custom action "Drake"
+				(
+	  			workflow = Drake_automation2
+				show action in edit record menu = true
+				column header = "Drake"
+				)
+			)
+		}
+		default list All_Taxes
+		{
+			displayName = "All Taxes"
+			show all rows from Estimated_Tax    
+			(
+				FEDERAL_ESTIMATED_TAX_PAYMENTS.Date_Time as "FEDERAL ESTIMATED TAX PAYMENTS	 "
+			)
+		}
+		default list FBAR1_Report
+		{
+			displayName = "FBAR Report"
+			show all rows from FBAR1    
+			(
+				Tax_Payer_Full_name as "Tax Payer Full name"
+				Spouse_Full_name as "Spouse Full name"
+				Tax_Year as "Tax Year"
+				Taxpayer_Separately as "Taxpayer Separately"
+				(
+					field = Taxpayer_Separately.Maximum_value_of_the_account_in_Rupees + " " + Taxpayer_Separately.Account_Closed_During_Tax_Year + " " + Taxpayer_Separately.Account_Number + " " + Taxpayer_Separately.Account_Opened_During_Tax_Year + " " + Taxpayer_Separately.Address + " " + Taxpayer_Separately.Dividend_Distributed_in_Rupees + " " + Taxpayer_Separately.Dividend_Distributed_in_US + " " + Taxpayer_Separately.Exchange_Rate_Used_Rupees_US + " " + Taxpayer_Separately.Foreign_Currency_Account_Maintained + " " + Taxpayer_Separately.Interest_Received_Accrued_in_Rupees + " " + Taxpayer_Separately.Interest_Received_Accrued_in_US + " " + Taxpayer_Separately.Maximum_value_of_the_account_in_US + " " + Taxpayer_Separately.Name_of_the_Financial_Institution + " " + Taxpayer_Separately.Tax_Paid_Outside_US_in_Rupees + " " + Taxpayer_Separately.Tax_Paid_Outside_US_in_US + " " + Taxpayer_Separately.Type_of_Account
+				)
+				Taxpayer_Jointly as "Taxpayer Jointly"
+				(
+					field = Taxpayer_Jointly.Maximum_value_of_the_account_in_Rupees + " " + Taxpayer_Jointly.Account_Closed_During_Tax_Year + " " + Taxpayer_Jointly.Account_Number + " " + Taxpayer_Jointly.Account_Opened_During_Tax_Year + " " + Taxpayer_Jointly.Address + " " + Taxpayer_Jointly.Dividend_Distributed_in_Rupees + " " + Taxpayer_Jointly.Dividend_Distributed_in_US + " " + Taxpayer_Jointly.Foreign_Currency_Account_Maintained + " " + Taxpayer_Jointly.Exchange_Rate_Used_Rupees_US + " " + Taxpayer_Jointly.Interest_Received_Accrued_in_Rupees + " " + Taxpayer_Jointly.Interest_Received_Accrued_in_US + " " + Taxpayer_Jointly.Joint_Owner_Last_Name + " " + Taxpayer_Jointly.Joint_Owner_Relationship + " " + Taxpayer_Jointly.Joint_Owner_SSN_or_TIN + " " + Taxpayer_Jointly.Joint_Owner_First_Name + " " + Taxpayer_Jointly.Maximum_value_of_the_account_in_US + " " + Taxpayer_Jointly.Name_of_the_Financial_Institution + " " + Taxpayer_Jointly.Tax_Paid_Outside_US_in_Rupees + " " + Taxpayer_Jointly.Tax_Paid_Outside_US_in_US + " " + Taxpayer_Jointly.Type_of_Account
+				)
+				Spouse_Separately as "Spouse Separately"
+				(
+					field = Spouse_Separately.Maximum_value_of_the_account_in_Rupees + " " + Spouse_Separately.Account_Closed_During_Tax_Year + " " + Spouse_Separately.Account_Number + " " + Spouse_Separately.Account_Opened_During_Tax_Year + " " + Spouse_Separately.Address + " " + Spouse_Separately.Dividend_Distributed_in_Rupees + " " + Spouse_Separately.Dividend_Distributed_in_US + " " + Spouse_Separately.Exchange_Rate_Used_Rupees_US + " " + Spouse_Separately.Foreign_Currency_Account_Maintained + " " + Spouse_Separately.Interest_Received_Accrued_in_Rupees + " " + Spouse_Separately.Interest_Received_Accrued_in_US + " " + Spouse_Separately.Maximum_value_of_the_account_in_US + " " + Spouse_Separately.Name_of_the_Financial_Institution + " " + Spouse_Separately.Tax_Paid_Outside_US_in_Rupees + " " + Spouse_Separately.Tax_Paid_Outside_US_in_US + " " + Spouse_Separately.Type_of_Account
+				)
+				Spouse_Jointly as "Spouse Jointly"
+				(
+					field = Spouse_Jointly.Maximum_value_of_the_account_in_Rupees + " " + Spouse_Jointly.Account_Closed_During_Tax_Year + " " + Spouse_Jointly.Account_Number + " " + Spouse_Jointly.Account_Opened_During_Tax_Year + " " + Spouse_Jointly.Address + " " + Spouse_Jointly.Dividend_Distributed_in_Rupees + " " + Spouse_Jointly.Dividend_Distributed_in_US + " " + Spouse_Jointly.Exchange_Rate_Used_Rupees_US + " " + Spouse_Jointly.Foreign_Currency_Account_Maintained + " " + Spouse_Jointly.Interest_Received_Accrued_in_Rupees + " " + Spouse_Jointly.Interest_Received_Accrued_in_US + " " + Spouse_Jointly.Joint_Owner_First_Name + " " + Spouse_Jointly.Joint_Owner_Last_Name + " " + Spouse_Jointly.Joint_Owner_Relationship + " " + Spouse_Jointly.Joint_Owner_SSN_or_TIN + " " + Spouse_Jointly.Maximum_value_of_the_account_in_US + " " + Spouse_Jointly.Name_of_the_Financial_Institution + " " + Spouse_Jointly.Tax_Paid_Outside_US_in_Rupees + " " + Spouse_Jointly.Tax_Paid_Outside_US_in_US + " " + Spouse_Jointly.Type_of_Account
+				)
+			)
+		}
+	}
+	pages
+	{
+		page FBAR
+		{
+			displayname = "FBAR"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width='100%'\n   \t>\n\t<widgets elementName='Widget' importedTemplate='true'/>\n</column>\n</row>\n</layout>\n</zml>"
+		}
+	}
+
+
+		 functions
+		 {
+			 Deluge
+			 {
+				 string Host_Config(string type, string recordId)
+                 {
+                 	return "http://127.0.0.1:5050?mode=creator&type=" + input.type + "&record_id=" + input.recordId;
+                 }
+			 }
+		 }
+
+
+		workflow
+		{
+
+
+
+
+
+
+		functions
+		{
+			Drake_Connection as "Drake Connection"
+			{
+				type =  functions
+				form = Personal_Info
+				execution type = for each record	
+				on start
+				{
+					actions 
+					{
+					on click
+					(
+						openUrl(thisapp.Host_Config("personal",input.ID.toString()),"new window");
+					)
+					}
+				}
+			}
+			OnAutomation as "OnAutomation"
+			{
+				type =  functions
+				form = Dependents
+				execution type = for each record	
+				on start
+				{
+					actions 
+					{
+					on click
+					(
+						openUrl(thisapp.Host_Config("dependent",input.ID.toString()),"new window");
+					)
+					}
+				}
+			}
+			Drake_Automation as "Drake_Automation"
+			{
+				type =  functions
+				form = Additional_Information
+				execution type = for each record	
+				on start
+				{
+					actions 
+					{
+					on click
+					(
+						openUrl(thisapp.Host_Config("Additional_Information",input.ID.toString()),"new window");
+					)
+					}
+				}
+			}
+			Drake_Automation1 as "Drake Automation"
+			{
+				type =  functions
+				form = Checklist
+				execution type = for each record	
+				on start
+				{
+					actions 
+					{
+					on click
+					(
+						openUrl(thisapp.Host_Config("Checklist",input.ID.toString()),"new window");
+					)
+					}
+				}
+			}
+			Drake_automation2 as "Drake automation"
+			{
+				type =  functions
+				form = Checklist
+				execution type = for each record	
+				on start
+				{
+					actions 
+					{
+					on click
+					(
+						openUrl(thisapp.Host_Config("checklist",input.ID.toString()),"new window");
+					)
+					}
+				}
+			}
+		}
+	}
+	share_settings
+	{
+			"Read"
+			{
+				name = "Read"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have read permission for all components\n"
+			}
+			"Write"
+			{
+				name = "Write"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have write permission for all components\n"
+			}
+			"Developer"
+			{
+				name = "Developer"
+				type = Developer
+				permissions = {Chat:false, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Developer Profile\n"
+			}
+			"Administrator"
+			{
+				name = "Administrator"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have all the permissions.\n"
+			}
+			"Customer"
+			{
+				name = "Customer"
+				type = Customer_Portal
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This is the default profile having only add and view permission.\n"
+			}
+			roles
+			{
+				"CEO"
+				{
+					description = "User belonging to this role can access data of all other users."
+				}
+			}
+	}
+
+	customize
+	{
+		icon
+		{
+			text = "DA"
+			background color = "theme"
+			foreground color = "#ffffff"
+		}
+	}
+
+	web
+	{
+		forms
+		{
+			form Additional_Information
+			{
+				label placement = left
+			}
+			form Checklist
+			{
+				label placement = left
+			}
+			form Dependents
+			{
+				label placement = left
+			}
+			form Estimated_Tax
+			{
+				label placement = left
+			}
+			form FBAR1
+			{
+				label placement = left
+			}
+			form Personal_Info
+			{
+				label placement = left
+			}
+		}
+		reports
+		{
+			report All_Personal_Infos
+			{
+				quickview
+				(
+					layout
+					(
+						displaylayout = "classic"
+						datablock1
+						(
+							fields
+							(
+								"Drake"
+								Drake_Status as "Drake Status"
+								Drake_Message as "Drake Message"
+								Taxpayer_Other_Phone as "Taxpayer Other Phone"
+								Taxpayer_First_Name as "Taxpayer First Name"
+								Taxpayer_Email as "Email Address"
+								Spouse_Email as "Spouse Email"
+								Taxpayer_Occupation as "Taxpayer Occupation"
+								Filing_Status as "Filing Status"
+								Taxpayer_Main_Phone as "Taxpayer Main Phone"
+								Taxpayer_Full_Name as "Taxpayer Full Name"
+								Taxpayer_Middle_Name as "Taxpayer Middle Name"
+								Taxpayer_DOB as "Taxpayer DOB"
+								Taxpayer_Last_Name as "Taxpayer Last Name"
+								Taxpayer_SSN as "Soc. Sec. #"
+								Spouse_First_Name as "Spouse First Name"
+								Spouse_Occupation as "Spouse Occupation"
+								Spouse_Main_Phone as "Spouse Main Phone"
+								Spouse_Middle_Name as "Spouse Middle Name"
+								Spouse_Full_Name as "Spouse Full Name "
+								Spouse_DOB as "Spouse DOB"
+								Spouse_Other_Phone as "Spouse Other Phone"
+								Spouse_Last_Name as "Spouse Last Name"
+								Spouse_SSN_ITIN as "Spouse Soc./ITIN #"
+								Mailing_Address as "Mailing Address"
+								State_Field as "State"
+								City
+								Zip
+								Residential_Status as "Your Residential Status"
+								Days_Present_in_US_2025 as "Number of Days Present in US in 2025"
+								Days_Present_in_US_2024 as "Number of Days Present in US in 2024"
+								Days_Present_in_US_2023 as "Number of Days Present in US in 2023"
+								Bank_Name as "Bank Name"
+								Routing_Number as "Routing"
+								Account_Number as "Account Number"
+								Account_Type as "Account Type"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 2
+						datablock1
+						(
+		     				title = "Overview"
+							fields
+							(
+								Taxpayer_Full_Name as "Taxpayer Full Name"
+								Spouse_Full_Name as "Spouse Full Name "
+								Taxpayer_Main_Phone as "Taxpayer Main Phone"
+								Taxpayer_Other_Phone as "Taxpayer Other Phone"
+								Spouse_Main_Phone as "Spouse Main Phone"
+								Spouse_Other_Phone as "Spouse Other Phone"
+							)
+						)
+						datablock2
+						(
+		     				title = "Title"
+							fields
+							(
+								Filing_Status as "Filing Status"
+								Taxpayer_First_Name as "Taxpayer First Name"
+								Taxpayer_Occupation as "Taxpayer Occupation"
+								Taxpayer_Main_Phone as "Taxpayer Main Phone"
+								Taxpayer_Full_Name as "Taxpayer Full Name"
+								Taxpayer_Middle_Name as "Taxpayer Middle Name"
+								Taxpayer_DOB as "Taxpayer DOB"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						)
+				)
+			}
+			report All_Dependents
+			{
+				quickview
+				(
+					layout
+					(
+						displaylayout = "classic"
+						datablock1
+						(
+							fields
+							(
+								"Drake"
+								Tax_Payer_Full_name as "Tax Payer Full name"
+								Dependents_Information.Dependents_Name as "Dependents Information"
+								Notes_to_Preparer as "Notes to Preparer"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								Dependents_Information.Dependents_Name as "Dependents Information"
+								Tax_Payer_Full_name as "Tax Payer Full name"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						)
+				)
+			}
+			report All_Additional_Information
+			{
+				quickview
+				(
+					layout
+					(
+						displaylayout = "classic"
+						datablock1
+						(
+							fields
+							(
+								"Drake"
+								Tax_Payer_Full_name as "Tax Payer Full name"
+								Do_you_have_a_foreign_bank_account as "Do you have a foreign bank account?"
+								Country_of_Foreign_Account as "Country of Foreign Account"
+								Are_you_required_to_file_for_FBAR as "Are you required to file for FBAR?"
+								Would_you_want_us_to_file_for_FBAR as "Would you want us to file for FBAR?"
+								FBAR_for as "FBAR for"
+								Did_you_receive_sell_exchange_gift_or_acquire_financial_interest_in_Digital_Asset as "Did you receive, sell, exchange, gift or acquire financial interest in Digital Asset?"
+								Drop_DownDid_you_and_family_have_health_insurance as "Drop DownDid you and family have health insurance?"
+								Do_you_have_self_employment_income as "Do you have self employment income (1099-NEC/1099-K/Cash)?"
+								Upload_1095A_if_Market_Place_coverage as "Upload 1095A if Market Place coverage"
+								Do_you_own_Foreign_Mutual_Funds as "Do you own Foreign Mutual Funds?"
+								Do_you_have_rental_property as "Do you have rental property?"
+								States_worked_in_during_the_tax_year.State as "States worked in during the tax year	 	 	 "
+								States_lived_in_during_the_tax_year.State as "States lived in during the tax year	 	 	 "
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								Do_you_have_a_foreign_bank_account as "Do you have a foreign bank account?"
+								Country_of_Foreign_Account as "Country of Foreign Account"
+								Are_you_required_to_file_for_FBAR as "Are you required to file for FBAR?"
+								Would_you_want_us_to_file_for_FBAR as "Would you want us to file for FBAR?"
+								FBAR_for as "FBAR for"
+								Did_you_receive_sell_exchange_gift_or_acquire_financial_interest_in_Digital_Asset as "Did you receive, sell, exchange, gift or acquire financial interest in Digital Asset?"
+								Drop_DownDid_you_and_family_have_health_insurance as "Drop DownDid you and family have health insurance?"
+								Upload_1095A_if_Market_Place_coverage as "Upload 1095A if Market Place coverage"
+								States_lived_in_during_the_tax_year.State as "States lived in during the tax year	 	 	 "
+								States_worked_in_during_the_tax_year.State as "States worked in during the tax year	 	 	 "
+								Tax_Payer_Full_name as "Tax Payer Full name"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						)
+				)
+			}
+			report All_Checklist
+			{
+				quickview
+				(
+					layout
+					(
+						displaylayout = "classic"
+						datablock1
+						(
+							fields
+							(
+								"Drake"
+								Tax_Payer_Full_name as "Tax Payer Full name"
+								W2.Type_field as "W2"
+								Interest_Income.Type_field as "1099 INT"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								W2.Type_field as "W2"
+								Interest_Income.Type_field as "1099 INT"
+								Tax_Payer_Full_name as "Tax Payer Full name"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						)
+				)
+			}
+			report All_Taxes
+			{
+				quickview
+				(
+					layout
+					(
+						displaylayout = "classic"
+						datablock1
+						(
+							fields
+							(
+								FEDERAL_ESTIMATED_TAX_PAYMENTS.Date_Time as "FEDERAL ESTIMATED TAX PAYMENTS	 "
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								FEDERAL_ESTIMATED_TAX_PAYMENTS.Date_Time as "FEDERAL ESTIMATED TAX PAYMENTS	 "
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						)
+				)
+			}
+			report FBAR1_Report
+			{
+				quickview
+				(
+					layout
+					(
+						displaylayout = "classic"
+						datablock1
+						(
+							fields
+							(
+								Tax_Payer_Full_name as "Tax Payer Full name"
+								Spouse_Full_name as "Spouse Full name"
+								Tax_Year as "Tax Year"
+								Taxpayer_Separately.Maximum_value_of_the_account_in_Rupees as "Taxpayer Separately"
+								Taxpayer_Jointly.Maximum_value_of_the_account_in_Rupees as "Taxpayer Jointly"
+								Spouse_Separately.Maximum_value_of_the_account_in_Rupees as "Spouse Separately"
+								Spouse_Jointly.Maximum_value_of_the_account_in_Rupees as "Spouse Jointly"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								Tax_Payer_Full_name as "Tax Payer Full name"
+								Spouse_Full_name as "Spouse Full name"
+								Taxpayer_Separately.Maximum_value_of_the_account_in_Rupees as "Taxpayer Separately"
+								Tax_Year as "Tax Year"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						)
+				)
+			}
+		}
+		menu
+		{
+			unused
+			{
+				form  FBAR1
+				{
+					icon = "tech-desktop"
+				}
+				report FBAR1_Report
+				{
+					icon = "tech-desktop"
+				}
+			}
+			space Space
+			{
+				displayname = "Space"
+				icon = "objects-spaceship"
+
+				section Personal_Infos
+				{
+					displayname = "Personal Infos"
+					icon = "users-2-contacts-44"
+					form  Personal_Info
+					{
+						icon = "travel-info"
+					}
+					report All_Personal_Infos
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section ZC_App_Preferences
+				{
+					displayname = "App Preferences"
+					icon = "design-app"
+					systemcomponent
+					{
+						type = localization
+						displayname = "Language Selection"
+						icon = "education-language"
+					}
+					systemcomponent
+					{
+						type = connection
+						displayname = "Integrations"
+						icon = "tech-2-connection"
+					}
+				}
+				section ZC_Approvals
+				{
+					displayname = "Approvals"
+					icon = "ui-2-hourglass"
+					systemcomponent
+					{
+						type = approval
+						approval status = pending
+						displayname = "Pending Tasks"
+						icon = "ui-2-hourglass"
+					}
+					systemcomponent
+					{
+						type = approval
+						approval status = completed
+						displayname = "Completed Tasks"
+						icon = "design-todo"
+					}
+				}
+				section SharedAnalytics_Section
+				{
+					type = shared_user_report_section
+					displayname = "Reports"
+					icon = "business-chart-bar-33"
+				}
+				section Dependents
+				{
+					displayname = "Dependents"
+					icon = "tech-desktop"
+					form  Dependents
+					{
+						icon = "tech-desktop"
+					}
+					report All_Dependents
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Additional_Information
+				{
+					displayname = "Additional Information"
+					icon = "travel-info"
+					form  Additional_Information
+					{
+						icon = "travel-info"
+					}
+					report All_Additional_Information
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Checklist
+				{
+					displayname = "Checklist"
+					icon = "users-2-a-edit"
+					form  Checklist
+					{
+						icon = "users-2-a-edit"
+					}
+					report All_Checklist
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Taxes
+				{
+					displayname = "Taxes"
+					icon = "business-money-coins"
+					form  Estimated_Tax
+					{
+						icon = "shopping-cash-register"
+					}
+					report All_Taxes
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section FBAR
+				{
+					displayname = "FBAR"
+					icon = "tech-desktop"
+					page FBAR
+					{
+						icon = "tech-desktop"
+					}
+				}
+			}
+			preference
+			{
+				icon
+				{
+					style = outline
+				}
+			}
+		}
+		customize
+		{
+			layout
+			{
+				theme = "theme_11"
+			}
+			font = "lato"
+			color options
+			{
+				color = "11"
+			}
+			logo
+			{
+				preference = "app_icon"
+				placement = "left"
+			}
+		}
+	}
+	phone
+	{
+		customize
+		{
+			layout = twocolumn
+			font = "default"
+			style = "3"
+			color options
+			{
+				color = chryslerpurple
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	tablet
+	{
+		customize
+		{
+			layout = slidingpane
+			font = "default"
+			style = "3"
+			color options
+			{
+				color = rose
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	translation
+{
+{"Language_Settings":{"LANGAGUE_WITH_LOGIN":"browser"}}
+}
+}

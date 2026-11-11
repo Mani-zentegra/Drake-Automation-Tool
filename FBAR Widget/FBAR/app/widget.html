@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FBAR – Foreign Bank Account Reporting</title>
-  <link rel="stylesheet" href="css/fbar.css">
+  <title>Tax Organizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap">
+  <link rel="stylesheet" href="css/fbar.css?v=202611112126">
+  <link rel="stylesheet" href="css/portal.css?v=202611112126">
   <!-- Zoho Creator Widget SDK v2. js.zohostatic.com serves every data centre (static.zoho.in does not exist).
        If the download fails, zoho-api.js reports it instead of a generic "SDK missing". -->
   <script>window.FBAR_SDK_LOAD_FAILED = false;</script>
@@ -12,69 +16,109 @@
           onerror="window.FBAR_SDK_LOAD_FAILED = true"></script>
 </head>
 <body>
-  <div class="page" id="fbarApp">
-
-    <!-- Form header -->
+  <!-- Same layout as the FBAR widget: header, underline tabs (one per section), card, centred actions. -->
+  <div class="page pt-page" id="ptApp">
     <header class="form-head">
       <div>
-        <h1>FBAR – Foreign Bank Account Reporting</h1>
-        <p class="sub">FinCEN Form 114 worksheet · Tax year <span id="taxYear">–</span></p>
+        <h1>Tax Organizer</h1>
+        <p class="sub" id="ptSub"></p>
       </div>
-      <span class="save-state" id="saveState" aria-live="polite"></span>
+      <span class="save-state" id="ptSaveState" aria-live="polite"></span>
     </header>
 
-    <!-- Taxpayer / Spouse -->
-    <nav class="person-tabs" role="tablist" aria-label="FBAR worksheet" id="personTabs"></nav>
+    <nav class="person-tabs pt-tabs" role="tablist" aria-label="Organizer sections" id="ptSteps"></nav>
 
-    <main class="form-card" id="formCard">
-      <!-- FBAR1 parent fields (label left, value right — same as the Creator form) -->
-      <div class="form-grid form-grid-3">
-        <div class="form-row">
-          <label for="taxpayerSelect">Tax Payer Full name <span class="req">*</span></label>
-          <select class="inp sel" id="taxpayerSelect" disabled><option value="">Loading…</option></select>
-        </div>
-        <div class="form-row">
-          <label for="spouseSelect">Spouse Full name</label>
-          <select class="inp sel" id="spouseSelect" disabled><option value="">Loading…</option></select>
-        </div>
-        <div class="form-row">
-          <label for="taxYearInput">Tax Year <span class="req">*</span></label>
-          <input class="inp" id="taxYearInput" inputmode="numeric" maxlength="4" autocomplete="off" disabled>
-        </div>
-      </div>
-
-      <div class="record-status" id="recordStatus" aria-live="polite"></div>
-      <div class="note" id="personNote" hidden></div>
-      <div class="totals-strip" id="totals"></div>
-
-      <!-- Subforms are rendered here: owned separately, owned jointly -->
-      <div class="subforms-host">
-        <div id="subforms"></div>
-        <div class="gate" id="gate" hidden></div>
-      </div>
-
-      <details class="notes">
-        <summary>Notes</summary>
-        <ol id="notesList"></ol>
-      </details>
-
-      <div class="busy" id="busy" hidden><span class="spinner" aria-hidden="true"></span><span id="busyText">Loading…</span></div>
+    <div class="pt-body">
+    <main class="form-card" id="ptCard">
+      <div id="ptMain" aria-live="polite"></div>
     </main>
 
-    <footer class="form-actions">
-      <button type="button" class="btn btn-primary" id="saveBtn" disabled>Save</button>
-      <button type="button" class="btn" id="resetBtn" disabled>Reset</button>
+    <!-- Section 6: the existing FBAR app, unchanged (fbar-*.js). Shown only on the FBAR section. -->
+    <div class="pt-fbar" id="fbarHost" hidden>
+      <div class="record-status" id="fbarStep"></div>
+      <div class="note" id="fbarNote" hidden>You answered "No" to having a foreign bank account, so this section is not needed.</div>
+      <div class="page" id="fbarApp">
+
+        <!-- Form header -->
+        <header class="form-head">
+          <div>
+            <h1>FBAR – Foreign Bank Account Reporting</h1>
+            <p class="sub">FinCEN Form 114 worksheet · Tax year <span id="taxYear">–</span></p>
+          </div>
+          <span class="save-state" id="saveState" aria-live="polite"></span>
+        </header>
+
+        <!-- Taxpayer / Spouse -->
+        <nav class="person-tabs" role="tablist" aria-label="FBAR worksheet" id="personTabs"></nav>
+
+        <main class="form-card" id="formCard">
+          <!-- FBAR1 parent fields (label left, value right — same as the Creator form) -->
+          <div class="form-grid form-grid-3">
+            <div class="form-row">
+              <label for="taxpayerSelect">Tax Payer Full name <span class="req">*</span></label>
+              <select class="inp sel" id="taxpayerSelect" disabled><option value="">Loading…</option></select>
+            </div>
+            <div class="form-row">
+              <label for="spouseSelect">Spouse Full name</label>
+              <select class="inp sel" id="spouseSelect" disabled><option value="">Loading…</option></select>
+            </div>
+            <div class="form-row">
+              <label for="taxYearInput">Tax Year <span class="req">*</span></label>
+              <input class="inp" id="taxYearInput" inputmode="numeric" maxlength="4" autocomplete="off" disabled>
+            </div>
+          </div>
+
+          <div class="record-status" id="recordStatus" aria-live="polite"></div>
+          <div class="note" id="personNote" hidden></div>
+          <div class="totals-strip" id="totals"></div>
+
+          <!-- Subforms are rendered here: owned separately, owned jointly -->
+          <div class="subforms-host">
+            <div id="subforms"></div>
+            <div class="gate" id="gate" hidden></div>
+          </div>
+
+          <details class="notes">
+            <summary>Notes</summary>
+            <ol id="notesList"></ol>
+          </details>
+
+          <div class="busy" id="busy" hidden><span class="spinner" aria-hidden="true"></span><span id="busyText">Loading…</span></div>
+        </main>
+
+        <footer class="form-actions">
+          <button type="button" class="btn btn-primary" id="saveBtn" disabled>Save FBAR</button>
+          <button type="button" class="btn" id="resetBtn" disabled>Reset</button>
+        </footer>
+
+        <div class="toast" id="toast" role="status" hidden></div>
+      </div>
+    </div>
+
+    <div class="busy pt-busy" id="ptBusy" hidden><span class="spinner" aria-hidden="true"></span><span id="ptBusyText"></span></div>
+    </div>
+
+    <footer class="form-actions pt-actions" id="ptFoot" hidden>
+      <button type="button" class="btn" id="ptPrev" data-nav>Previous</button>
+      <button type="button" class="btn" id="ptReset" data-nav hidden>Reset</button>
+      <button type="button" class="btn" id="ptSave" data-nav>Save</button>
+      <button type="button" class="btn btn-primary" id="ptNext" data-nav>Save &amp; Next</button>
     </footer>
 
-    <div class="toast" id="toast" role="status" hidden></div>
+    <div class="toast" id="ptToast" role="status" hidden></div>
   </div>
 
-  <script src="js/fbar-config.js"></script>
-  <script src="js/fbar-schema.js"></script>
-  <script src="js/zoho-api.js"></script>
-  <script src="js/fbar-mapper.js"></script>
-  <script src="js/fbar-service.js"></script>
-  <script src="js/fbar-dialog.js"></script>
-  <script src="js/fbar-app.js"></script>
+  <script src="js/fbar-config.js?v=202611112126"></script>
+  <script src="js/fbar-schema.js?v=202611112126"></script>
+  <script src="js/zoho-api.js?v=202611112126"></script>
+  <script src="js/fbar-mapper.js?v=202611112126"></script>
+  <script src="js/fbar-service.js?v=202611112126"></script>
+  <script src="js/fbar-dialog.js?v=202611112126"></script>
+  <script src="js/portal-schema.js?v=202611112126"></script>
+  <script src="js/portal-values.js?v=202611112126"></script>
+  <script src="js/portal-service.js?v=202611112126"></script>
+  <script src="js/portal-render.js?v=202611112126"></script>
+  <script src="js/fbar-app.js?v=202611112126"></script>
+  <script src="js/portal-app.js?v=202611112126"></script>
 </body>
 </html>

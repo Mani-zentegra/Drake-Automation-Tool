@@ -86,12 +86,14 @@
     state.dirty = true;
     if (sfId) state.changed.add(`${personId}.${sfId}`);
     const el = $("#saveState"); el.textContent = "Unsaved changes"; el.classList.add("dirty");
+    document.dispatchEvent(new CustomEvent("fbar:status"));
   }
 
   function markClean(text) {
     state.dirty = false;
     state.changed.clear();
     const el = $("#saveState"); el.classList.remove("dirty"); el.textContent = text || "";
+    document.dispatchEvent(new CustomEvent("fbar:status"));
   }
 
   function setBusy(text) {
@@ -675,7 +677,9 @@
     } catch (err) {
       setBusy("");
       $("#gate").textContent = "The widget could not connect to Zoho Creator.";
-      showError("Can't start the FBAR widget", err);
+      state.startError = err;
+      // Inside the tax organizer the message is shown when the client opens the FBAR step, not over the welcome page.
+      if (!window.PORTAL_SCHEMA) showError("Can't start the FBAR widget", err);
     } finally {
       setBusy("");
     }
@@ -690,8 +694,31 @@
 
   // Sideways scrolling: Shift + mouse wheel, the column navigator or the arrows. A plain wheel always scrolls the page.
 
-  /* ---------------- boot ---------------- */
-  startUp();
+  /* ---------------- hook for the client tax organizer (portal-app.js) ----------------
+   * Lets the organizer open FBAR for the client it already knows, using the normal selection flow above
+   * (same load / duplicate / unsaved-changes handling). Nothing here changes how FBAR loads or saves. */
+  const ready = startUp();
+  window.FbarApp = {
+    ready,
+    isDirty: () => state.dirty,
+    /** True when an FBAR record is loaded/saved for this client (as taxpayer). */
+    hasRecord: (clientId) => !!(state.data && state.data.recordId) && $("#taxpayerSelect").value === String(clientId),
+    async showClient(clientId) {
+      await ready;
+      if (!state.ready) { if (state.startError) throw state.startError; return false; }
+      if (!state.people.some((p) => p.id === String(clientId))) {     // a client created in this session
+        state.people = await service.loadPeople();
+        fillPeople();
+      }
+      if (!state.people.some((p) => p.id === String(clientId))) return false;
+      ["#taxpayerSelect", "#spouseSelect"].forEach((id) => { $(id).disabled = true; });   // the organizer fixes the client
+      if ($("#taxpayerSelect").value !== String(clientId)) {
+        $("#taxpayerSelect").value = String(clientId);
+        onTaxpayerChange();
+      }
+      return true;
+    },
+  };
 
   window.FBARApp = { state, renderAll, totals, isUsed };   // debugging aid
 })();

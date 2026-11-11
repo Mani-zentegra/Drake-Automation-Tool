@@ -95,7 +95,15 @@
      * Builds that expose ZOHO.CREATOR.init() still get it called first. getInitParams() therefore only
      * answers once the widget is really connected to Creator.
      */
-    async init() {
+    init() {
+      // The organizer shell and the FBAR app both call init(); connect once and share the result.
+      if (!this._initPromise) {
+        this._initPromise = this._connect().catch((err) => { this._initPromise = null; throw err; });
+      }
+      return this._initPromise;
+    },
+
+    async _connect() {
       if (global.FBAR_SDK_LOAD_FAILED) {
         throw new ZohoApiError("sdk-missing", "The Zoho Creator Widget SDK could not be downloaded from js.zohostatic.com. "
           + "Check the internet connection, proxy or firewall, then reload.");
@@ -170,6 +178,16 @@
       return call(`update record ${id}`, () => ZOHO.CREATOR.DATA.updateRecordById({
         app_name: this.appName, report_name: reportName, id: String(id), payload: { data },
       })).then((r) => r.data && r.data.ID);
+    },
+
+    /**
+     * Upload one file into a file-upload field of a saved record (ZOHO.CREATOR.FILE.uploadFile).
+     * config: { report_name, id, field_name, file }  — for a subform column: id = the subform row ID,
+     * field_name = "Subform.Column" and parent_id = the main record ID. Never retried (no double uploads).
+     */
+    uploadFile(config) {
+      return call(`upload ${config.file && config.file.name}`, () => ZOHO.CREATOR.FILE.uploadFile(
+        Object.assign({ app_name: this.appName }, config, { id: String(config.id) })));
     },
   };
 

@@ -1,0 +1,163 @@
+/*
+ * Tax Organizer additions. Everything visual comes from fbar.css (tokens, .page, .form-head, .person-tabs/.ptab,
+ * .form-card, .form-grid/.form-row, .inp, .sf-*, .cell, .btn, .note, .gate, .busy, .toast); this file only adds what the
+ * other sections need on top of it, in the same style. Load after fbar.css.
+ */
+
+textarea { font: inherit; color: inherit; }
+
+/* ---------- section tabs (FBAR .ptab, one per section) ---------- */
+.pt-tabs {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.pt-tabs::-webkit-scrollbar { display: none; }
+.pt-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  padding: 9px 14px;
+}
+.pt-tab:disabled { color: #a3aab4; cursor: not-allowed; }
+.pt-tab .cnt { margin-left: 0; }
+.pt-no {
+  width: 20px; height: 20px;
+  display: inline-grid; place-items: center;
+  border-radius: 50%;
+  font-size: 11px; font-weight: 700;
+  background: var(--group-bg); color: var(--ink-2);
+}
+.pt-tab[aria-selected="true"] .pt-no { background: var(--blue); color: #fff; }
+.pt-tab.st-done .pt-no, .pt-tab.st-notneeded .pt-no { background: var(--ok); color: #fff; }
+.pt-tab.st-unsaved .pt-no { background: var(--warn); color: #fff; }
+.cnt.ok { color: var(--ok); }
+.cnt.warn { color: var(--warn); }
+.cnt.bad { color: var(--bad); }
+
+/* ---------- card body ---------- */
+.pt-body { position: relative; }
+.pt-busy { position: absolute; border-radius: 0 0 6px 6px; padding-top: 80px; }
+#ptMain > .record-status { margin: 0 0 12px; }
+.pt-mt { margin-top: 6px; }
+
+/* parent fields: FBAR label-left rows, three per line on wide screens */
+.form-grid.pt-fields {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px 28px;
+  margin-bottom: 4px;
+}
+.pt-fields .form-row { grid-template-columns: 150px minmax(0, 1fr); align-items: start; }
+.pt-fields .form-row > label { padding-top: 8px; line-height: 1.3; }
+.pt-fields .form-row.wide { grid-column: 1 / -1; grid-template-columns: 150px minmax(0, 1fr); }
+/* long questions: question left, answer right, full width */
+.pt-fields .form-row.q { grid-column: 1 / -1; grid-template-columns: minmax(0, 560px) minmax(220px, 320px); justify-content: start; column-gap: 24px; }
+.pt-ctl { min-width: 0; }
+.pt-fields .err { white-space: normal; }
+.form-row.invalid .inp { border-color: var(--bad); background-color: var(--bad-soft); }
+.form-row .tip, .sf-table thead th .tip {
+  display: inline-block; width: 14px; height: 14px; line-height: 12px; text-align: center;
+  border: 1px solid var(--input-line); border-radius: 50%;
+  font-size: 9.5px; color: var(--ink-3); margin-left: 4px; cursor: help; font-weight: 700; vertical-align: 1px;
+}
+textarea.inp { height: auto; min-height: 64px; padding: 7px 10px; resize: vertical; }
+textarea.cell { height: var(--row-h); padding: 7px 9px; resize: vertical; }
+select.inp.sel.placeholder { color: #8e96a2; }
+.inp.num { text-align: right; font-variant-numeric: tabular-nums; }
+input[type="date"].inp, input[type="datetime-local"].inp { padding-right: 6px; }
+
+.pt-choices { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; min-height: var(--row-h); }
+.pt-choice { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; white-space: nowrap; }
+.pt-choice input { margin: 0; accent-color: var(--blue); }
+
+/* section titles reuse FBAR .sf-title; a section is a little tighter than an FBAR subform */
+.pt-sf { margin-bottom: 14px; }
+.pt-sf .sf-title { margin-bottom: 10px; }
+.pt-sf .sf-title .meta { white-space: normal; }
+
+/* ---------- list tables (FBAR .sf-table without the column-group row) ---------- */
+.pt-table thead tr.cols th { top: 0; }
+.pt-table td { vertical-align: middle; }
+.pt-table td.invalid .cell { border-color: var(--bad); background-color: var(--bad-soft); }
+.pt-table .pt-choices { min-height: var(--row-h); }
+.pt-table tr.pt-locked td { background: #f8f9fb; }
+.pt-lock { display: inline-grid; place-items: center; width: 30px; height: 30px; color: var(--ink-3); cursor: help; }
+.pt-locknote { color: var(--ink-2); font-size: 12.5px; }
+.pt-list td { height: 44px; }
+.pt-act { width: 1%; white-space: nowrap; text-align: right; }
+.btn.pt-sm { height: 30px; min-width: 76px; padding: 0 14px; }
+.sf-foot .add-new + .add-new { margin-left: auto; }
+
+/* files */
+.pt-files { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; min-height: var(--row-h); }
+.pt-file {
+  display: inline-flex; align-items: center; gap: 4px; max-width: 100%;
+  padding: 2px 8px; border-radius: 999px; font-size: 12px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.pt-file.saved { background: #e8f5ec; color: var(--ok); border: 1px solid #cde9d6; }
+.pt-file.new { background: var(--blue-soft); color: var(--blue-dark); border: 1px solid #cfe0fb; }
+.pt-x { border: 0; background: transparent; color: inherit; cursor: pointer; font-weight: 700; padding: 0 2px; }
+.pt-upload span { color: var(--blue); font-weight: 600; cursor: pointer; padding: 4px 2px; }
+.pt-upload:hover span { color: var(--blue-dark); text-decoration: underline; }
+.pt-muted { color: var(--ink-3); }
+
+/* messages */
+.pt-alert { border-radius: var(--radius); padding: 10px 12px; margin-bottom: 12px; }
+.pt-alert.bad { background: var(--bad-soft); border: 1px solid #f3c7c7; color: #8a1f1f; }
+.pt-alert ul { margin: 6px 0 0 18px; padding: 0; }
+.gate b { color: var(--ink); }
+.pt-gate-act { margin-top: 12px; }
+.pt-tech { margin-top: 10px; font-size: 12.5px; color: var(--ink-2); }
+.pt-tech summary { cursor: pointer; color: var(--ink-3); }
+.pt-tech ul { margin: 6px 0 0 18px; padding: 0; }
+
+/* welcome: the six sections at a glance */
+.pt-overview { width: 100%; border-collapse: collapse; }
+.pt-overview th, .pt-overview td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.pt-overview th { width: 220px; font-weight: 700; white-space: nowrap; }
+.pt-overview td { color: var(--ink-2); }
+.pt-overview td.c-no { width: 40px; text-align: center; font-weight: 700; color: var(--ink-3); }
+
+/* ---------- FBAR section: the FBAR app sits in the same card position ---------- */
+.pt-fbar {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 0;
+  border-radius: 0 0 6px 6px;
+  padding: 12px 16px 6px;
+}
+.pt-fbar > .page { padding: 0; }
+.pt-fbar > .record-status { margin: 0 0 12px; }
+/* inside the organizer FBAR uses the organizer's header and action bar: its own title and buttons stay in the DOM
+   (fbar-app.js drives them) but are not shown twice */
+.pt-fbar #fbarApp > .form-head { display: none; }
+.pt-fbar #fbarApp > .form-actions { display: none; }
+
+/* step change: a short fade so moving between sections feels like one app */
+@keyframes pt-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.pt-enter { animation: pt-in .18s ease-out; }
+@media (prefers-reduced-motion: reduce) { .pt-enter { animation: none; } }
+
+/* organizer actions: FBAR's centred buttons, kept in view at the bottom of long sections */
+.pt-actions {
+  position: sticky; bottom: 0; z-index: 15;
+  padding: 10px 0;
+  background: linear-gradient(to top, var(--page) 70%, rgba(244, 246, 249, 0));
+}
+
+@media (max-width: 1100px) {
+  .form-grid.pt-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .form-grid.pt-fields { grid-template-columns: minmax(0, 1fr); }
+  .pt-fields .form-row, .pt-fields .form-row.wide { grid-template-columns: 110px minmax(0, 1fr); }
+  .pt-fields .form-row.q { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .pt-fields .form-row.q > label { padding-top: 0; }
+  .pt-tab { flex: none; padding: 9px 10px; }
+  .pt-tab .cnt { display: none; }
+  .pt-overview th { width: auto; white-space: normal; }
+  .pt-overview td:last-child { display: none; }
+  .pt-fbar { padding: 10px 8px 4px; }
+  .pt-actions .btn { min-width: 0; flex: 1; }
+}
